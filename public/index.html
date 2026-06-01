@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   
@@ -58,6 +58,8 @@
           <div class="time-block"><span id="hours">--</span><span class="time-unit">h</span></div>
           <div class="time-separator">:</div>
           <div class="time-block"><span id="minutes">--</span><span class="time-unit">m</span></div>
+          <div class="time-separator">:</div>
+          <div class="time-block"><span id="seconds">--</span><span class="time-unit">s</span></div>
         </div>
       </div>
     </div>
@@ -70,7 +72,7 @@
         <h2>Never Miss a Kick</h2>
         <p class="hero-subtitle">
           Download or subscribe to the complete <strong>FIFA World Cup 2026™</strong> match calendar. 
-          Custom-filtered for your favorite team, dynamically translated to your local timezone.
+          Custom-filtered for your favourite team, dynamically translated to your local timezone.
         </p>
         
         <div class="host-nations">
@@ -83,23 +85,25 @@
       <!-- Quick Sync Panel -->
       <div class="sync-panel glass-card">
         <div class="sync-info">
-          <h3>Dynamic Calendar Sync</h3>
+          <h3>Sync Tournament Calendar</h3>
           <p id="syncDescription">All 104 matches, ready for your device</p>
         </div>
+        
         <div class="sync-actions">
-          <button id="btnDownloadIcs" class="btn btn-primary" title="Download iCalendar .ics file">
+          <button id="btnDownloadIcs" class="btn btn-primary btn-full" title="Download iCalendar .ics file">
             <i data-lucide="download"></i>
             <span>Download .ics File</span>
           </button>
           
-          <button id="btnGoogleCalendar" class="btn btn-secondary" title="Add calendar to Google Calendar without downloading">
-            <i data-lucide="calendar-plus"></i>
-            <span>Sync with Google Calendar</span>
-          </button>
-        </div>
-        <div class="sync-footer">
-          <span><i data-lucide="shield-check"></i> 100% Free & Safe</span>
-          <span><i data-lucide="refresh-cw"></i> Auto-updates (Subscribers)</span>
+          <div class="sync-subscription-group">
+            <button id="btnGoogleCalendar" class="btn btn-primary btn-green btn-full" title="Add calendar to Google Calendar without downloading">
+              <i data-lucide="calendar-plus"></i>
+              <span>Sync with Google Calendar</span>
+            </button>
+            <span class="sync-subscription-hint">
+              <i data-lucide="refresh-cw"></i> Live auto-updates on schedule changes
+            </span>
+          </div>
         </div>
       </div>
     </section>
@@ -121,7 +125,7 @@
           <div class="select-wrapper">
             <i data-lucide="flag" class="input-icon"></i>
             <select id="selCountry">
-              <option value="ALL">Select Favorite Team (Show All)</option>
+              <option value="ALL">All Teams</option>
               <!-- Populated by JavaScript -->
             </select>
           </div>
@@ -203,6 +207,25 @@
         <div class="loader-container" id="mainLoader">
           <div class="loader-spinner"></div>
           <p>Assembling World Cup fixtures...</p>
+        </div>
+      </div>
+      
+      <!-- Bottom CTA Sync Panel -->
+      <div class="bottom-sync-panel glass-card" id="bottomSyncPanel" style="display: none;">
+        <div class="bottom-sync-info">
+          <h3>Custom Selection Ready</h3>
+          <p id="bottomSyncDescription">All 104 matches, ready for your device</p>
+        </div>
+        <div class="bottom-sync-actions">
+          <button id="btnBottomDownloadIcs" class="btn btn-primary" title="Download iCalendar .ics file for selected matches">
+            <i data-lucide="download"></i>
+            <span>Download .ics</span>
+          </button>
+          
+          <button id="btnBottomGoogleCalendar" class="btn btn-primary btn-green" title="Sync selected matches with Google Calendar">
+            <i data-lucide="calendar-plus"></i>
+            <span>Sync Google Calendar</span>
+          </button>
         </div>
       </div>
       

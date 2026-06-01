@@ -108,6 +108,7 @@ function startCountdownTicker() {
   const daysEl = document.getElementById("days");
   const hoursEl = document.getElementById("hours");
   const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
   
   function updateTicker() {
     const now = new Date();
@@ -121,14 +122,16 @@ function startCountdownTicker() {
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
     
     daysEl.textContent = String(days).padStart(2, '0');
     hoursEl.textContent = String(hours).padStart(2, '0');
     minutesEl.textContent = String(minutes).padStart(2, '0');
+    secondsEl.textContent = String(seconds).padStart(2, '0');
   }
   
   updateTicker();
-  setInterval(updateTicker, 60000); // Update every minute
+  setInterval(updateTicker, 1000); // Update every second
 }
 
 // 3. Fetch CSV data and parse it
@@ -219,7 +222,7 @@ function populateFilters() {
     }
   });
   
-  // Populate Favorite Team selector
+  // Populate Favourite Team selector
   Array.from(countries).sort().forEach(country => {
     const option = document.createElement("option");
     option.value = country;
@@ -313,13 +316,20 @@ function updateStatsBar() {
 // Update details on the Quick Sync card
 function updateSyncDescription() {
   const syncDesc = document.getElementById("syncDescription");
+  const bottomSyncDesc = document.getElementById("bottomSyncDescription");
   
+  let descText = "";
   if (activeFilters.country !== 'ALL') {
-    syncDesc.innerHTML = `3 matches involving <strong>${activeFilters.country}</strong>, customized for you`;
+    descText = `3 matches involving <strong>${activeFilters.country}</strong>, customized for you`;
   } else if (filteredMatches.length !== rawMatches.length) {
-    syncDesc.innerHTML = `<strong>${filteredMatches.length}</strong> selected matches based on your active filters`;
+    descText = `<strong>${filteredMatches.length}</strong> selected matches based on your active filters`;
   } else {
-    syncDesc.innerHTML = `All <strong>104</strong> matches, ready for your device`;
+    descText = `All <strong>104</strong> matches, ready for your device`;
+  }
+  
+  syncDesc.innerHTML = descText;
+  if (bottomSyncDesc) {
+    bottomSyncDesc.innerHTML = descText;
   }
 }
 
@@ -340,6 +350,8 @@ function renderTimeline() {
       </div>
     `;
     document.getElementById("btnEmptyReset").addEventListener("click", resetAllFilters);
+    const bottomPanel = document.getElementById("bottomSyncPanel");
+    if (bottomPanel) bottomPanel.style.display = "none";
     if (typeof lucide !== 'undefined') lucide.createIcons();
     return;
   }
@@ -379,6 +391,9 @@ function renderTimeline() {
     dateGroup.appendChild(matchesList);
     container.appendChild(dateGroup);
   });
+  
+  const bottomPanel = document.getElementById("bottomSyncPanel");
+  if (bottomPanel) bottomPanel.style.display = "flex";
   
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
@@ -483,7 +498,7 @@ function getFormattedTimeForTimezone(utcTimeStr, location) {
   const tz = getTargetTimezone(location);
   
   const options = { 
-    hour: '2-digit', 
+    hour: 'numeric', 
     minute: '2-digit',
     hour12: true,
     timeZone: tz,
@@ -496,7 +511,7 @@ function getFormattedTimeForTimezone(utcTimeStr, location) {
   if (activeFilters.timezone === 'venue') {
     const tzOptions = { timeZone: tz, timeZoneName: 'short' };
     const tzName = new Intl.DateTimeFormat('en-US', tzOptions).format(date).split(' ').pop();
-    timeString += ` (${tzName})`;
+    timeString += ` ${tzName}`;
   } else if (activeFilters.timezone === 'utc') {
     timeString += ' UTC';
   }
@@ -712,6 +727,12 @@ function setupEventHandlers() {
   // Primary ICS Action Buttons
   document.getElementById("btnDownloadIcs").addEventListener("click", downloadFilteredMatchesIcs);
   document.getElementById("btnGoogleCalendar").addEventListener("click", openGoogleCalendarModal);
+  
+  // Bottom ICS Action Buttons
+  const bottomDownloadBtn = document.getElementById("btnBottomDownloadIcs");
+  const bottomGoogleBtn = document.getElementById("btnBottomGoogleCalendar");
+  if (bottomDownloadBtn) bottomDownloadBtn.addEventListener("click", downloadFilteredMatchesIcs);
+  if (bottomGoogleBtn) bottomGoogleBtn.addEventListener("click", openGoogleCalendarModal);
   
   // Modal handlers
   const importModal = document.getElementById("importModal");
