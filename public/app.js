@@ -1281,7 +1281,9 @@ function openGoogleCalendarModal() {
     const icsFileUrl = `${origin}/calendars/${staticFilename}`;
     txtIcsUrl.value = icsFileUrl;
 
-    const gcalSyncUrl = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(icsFileUrl)}`;
+    // Use webcal protocol and a cache-busting query parameter to force Google to fetch fresh DNS/files
+    const webcalUrl = icsFileUrl.replace(/^https?:\/\//i, 'webcal://') + '?v=2026';
+    const gcalSyncUrl = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(webcalUrl)}`;
     modalDirectSyncLink.href = gcalSyncUrl;
   }
 
