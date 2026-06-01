@@ -351,15 +351,12 @@
         <button class="btn-close" id="btnCloseModal">&times;</button>
       </div>
       <div class="modal-body">
-        <p class="modal-intro">
+        <p class="modal-intro" id="modalIntroText">
           You are about to subscribe to <strong id="modalCalendarName">All Matches</strong>. Subscribing keeps your calendar automatically updated in real-time if matches change.
-          <span style="display: block; margin-top: 0.5rem; color: #ff6b6b; font-size: 0.8rem; font-weight: 500; opacity: 0.95;">
-            ⚠️ <strong>Warning:</strong> Google Calendar does not support a single-click 'delete all' for individual event imports. Please confirm your selection above.
-          </span>
         </p>
 
         <div class="modal-steps">
-          <div class="step-card">
+          <div class="step-card" id="syncStep1">
             <div class="step-number">1</div>
             <div class="step-content">
               <h4>Direct Single-Click Sync</h4>
@@ -370,9 +367,9 @@
             </div>
           </div>
 
-          <div class="step-divider"><span>OR</span></div>
+          <div class="step-divider" id="syncDivider1"><span>OR</span></div>
 
-          <div class="step-card">
+          <div class="step-card" id="syncStep2">
             <div class="step-number">2</div>
             <div class="step-content">
               <h4>Subscribe via Calendar URL</h4>
@@ -386,16 +383,19 @@
             </div>
           </div>
 
-          <div class="step-divider"><span>OR</span></div>
+          <div class="step-divider" id="syncDivider2"><span>OR</span></div>
 
-          <div class="step-card">
-            <div class="step-number">3</div>
+          <div class="step-card" id="downloadStep3">
+            <div class="step-number" id="downloadStepNumber">3</div>
             <div class="step-content">
               <h4>Manual Upload (.ics)</h4>
               <p>Download the customized <code>.ics</code> file to your computer, open Google Calendar, go to <strong>Settings > Import & Export</strong>, and upload the file.</p>
-              <button id="modalDownloadBtn" class="btn btn-primary btn-full">
+              <button id="modalDownloadBtn" class="btn btn-primary btn-full" style="margin-bottom: 0.5rem;">
                 <i data-lucide="download"></i> Download ICS File
               </button>
+              <span class="step-recommendation-note" style="display: block; color: #f1cd64; font-size: 0.78rem; font-weight: 500; opacity: 0.95; line-height: 1.4;">
+                💡 <strong>Recommendation:</strong> When manually importing the <code>.ics</code> file, it is highly recommended to import it into a <strong>new, separate calendar</strong> in Google Calendar. This allows you to delete all matches in one go if you change your mind later.
+              </span>
             </div>
           </div>
         </div>

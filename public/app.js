@@ -1202,6 +1202,13 @@ function openGoogleCalendarModal() {
   const txtIcsUrl = document.getElementById("txtIcsUrl");
   const modalDownloadBtn = document.getElementById("modalDownloadBtn");
 
+  const syncStep1 = document.getElementById("syncStep1");
+  const syncDivider1 = document.getElementById("syncDivider1");
+  const syncStep2 = document.getElementById("syncStep2");
+  const syncDivider2 = document.getElementById("syncDivider2");
+  const downloadStepNumber = document.getElementById("downloadStepNumber");
+  const modalIntroText = document.getElementById("modalIntroText");
+
   let calendarTitle = "All Matches";
 
   // Track Google Analytics event
@@ -1212,9 +1219,9 @@ function openGoogleCalendarModal() {
     });
   }
 
-  const hasOtherFilters = activeFilters.group.size > 0 || 
-                          activeFilters.venue.size > 0 || 
-                          activeFilters.hostCountry.size > 0 || 
+  const hasOtherFilters = activeFilters.group.size > 0 ||
+                          activeFilters.venue.size > 0 ||
+                          activeFilters.hostCountry.size > 0 ||
                           activeFilters.stage !== 'ALL';
 
   const isMultiTeam = activeFilters.country.size > 1;
@@ -1227,17 +1234,23 @@ function openGoogleCalendarModal() {
       selectionLabel = `${activeFilters.country.size} Teams Selected`;
     }
 
-    modalCalendarName.textContent = `${selectionLabel} (${filteredMatches.length} Matches)`;
-    txtIcsUrl.value = "Direct URL sync is only supported for single-team or all-match feeds.";
-    modalDirectSyncLink.style.pointerEvents = "none";
-    modalDirectSyncLink.style.opacity = "0.5";
-    modalDirectSyncLink.innerHTML = `Google Sync (Single Team/All Only)`;
+    calendarTitle = `${selectionLabel} (${filteredMatches.length} Matches)`;
+
+    // Update intro text explaining that sync is not possible
+    modalIntroText.innerHTML = `
+      You are about to download a custom iCalendar (<code>.ics</code>) file for <strong id="modalCalendarName">${calendarTitle}</strong>.
+      Real-time subscription/sync is not supported for custom selections, but you can download and manually upload this custom calendar.
+    `;
+
+    // Hide options 1 and 2
+    if (syncStep1) syncStep1.style.display = "none";
+    if (syncDivider1) syncDivider1.style.display = "none";
+    if (syncStep2) syncStep2.style.display = "none";
+    if (syncDivider2) syncDivider2.style.display = "none";
+    if (downloadStepNumber) downloadStepNumber.textContent = "1";
+
   } else {
     // Single country or all matches (no other filters active)
-    modalDirectSyncLink.style.pointerEvents = "auto";
-    modalDirectSyncLink.style.opacity = "1";
-    modalDirectSyncLink.innerHTML = `<i data-lucide="calendar-plus"></i> Open Google Calendar`;
-
     let staticFilename = "all.ics";
     if (activeFilters.country.size === 1) {
       const singleCountry = Array.from(activeFilters.country)[0];
@@ -1245,7 +1258,21 @@ function openGoogleCalendarModal() {
       staticFilename = `${cleanFilename(singleCountry)}.ics`;
     }
 
-    modalCalendarName.textContent = calendarTitle;
+    // Update intro text explaining that sync is possible and will auto-update
+    modalIntroText.innerHTML = `
+      You are about to subscribe to <strong id="modalCalendarName">${calendarTitle}</strong>. Subscribing keeps your calendar automatically updated in real-time if matches change.
+    `;
+
+    // Show options 1 and 2
+    if (syncStep1) syncStep1.style.display = "flex";
+    if (syncDivider1) syncDivider1.style.display = "block";
+    if (syncStep2) syncStep2.style.display = "flex";
+    if (syncDivider2) syncDivider2.style.display = "block";
+    if (downloadStepNumber) downloadStepNumber.textContent = "3";
+
+    modalDirectSyncLink.style.pointerEvents = "auto";
+    modalDirectSyncLink.style.opacity = "1";
+    modalDirectSyncLink.innerHTML = `<i data-lucide="calendar-plus"></i> Open Google Calendar`;
 
     const origin = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
       ? 'https://worldcupcalendar.football'
