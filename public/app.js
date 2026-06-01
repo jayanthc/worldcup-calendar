@@ -4,16 +4,15 @@
 let rawMatches = [];
 let filteredMatches = [];
 let activeFilters = {
-  search: '',
-  country: 'ALL',
+  country: new Set(), // Set of selected country names (empty means All Teams)
+  group: new Set(),   // Set of selected group names (empty means All Groups)
   stage: 'ALL',
-  venue: 'ALL',
-  group: 'ALL',
-  timezone: 'local' // 'local', 'venue', 'utc'
+  venue: new Set(),   // Set of selected city names (empty means All Cities)
+  timezone: 'local'   // 'local', 'venue', 'utc'
 };
 
-// Target Date for Opening Match: June 11, 2026 at 11:00:00 UTC
-const OPENING_MATCH_DATE = new Date("2026-06-11T11:00:00Z");
+// Target Date for Opening Match: June 11, 2026 at 19:00:00 UTC
+const OPENING_MATCH_DATE = new Date("2026-06-11T19:00:00Z");
 
 // Country ISO 2-letter Code Mapping for FlagCDN
 const countryCodes = {
@@ -89,7 +88,7 @@ const stadiumTimezones = {
 
 // Helper: Clean name to match generated ICS file names
 function cleanFilename(name) {
-  return name.replace(/[^a-zA-Z0-9\s-]/g, '').strip?.() || name.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
+  return name.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
 }
 
 // 1. Initialize Lucide Icons & App
@@ -165,7 +164,6 @@ async function fetchScheduleData() {
 // Simple and robust CSV parser supporting quote escapes
 function parseCSV(text) {
   const lines = text.split(/\r?\n/).filter(line => line.trim() !== '');
-  const headers = lines[0].split(',');
   const matches = [];
 
   for (let i = 1; i < lines.length; i++) {
@@ -201,12 +199,14 @@ function parseCSV(text) {
   return matches;
 }
 
-// 4. Populate filters with unique options from schedule
+// 4. Populate custom checkbox multiselect containers with unique options
 function populateFilters() {
-  const selCountry = document.getElementById("selCountry");
-  const selVenue = document.getElementById("selVenue");
+  const countryList = document.getElementById("countryList");
+  const groupList = document.getElementById("groupList");
+  const venueList = document.getElementById("venueList");
   
   const countries = new Set();
+  const groups = new Set();
   const venues = new Set();
   
   rawMatches.forEach(match => {
@@ -217,28 +217,93 @@ function populateFilters() {
       }
     });
     
+    if (match.group && match.group.trim() !== '') {
+      groups.add(match.group);
+    }
+    
     if (match.location) {
-      venues.add(match.location);
+      const city = match.location.split(', ').pop();
+      venues.add(city);
     }
   });
   
-  // Populate Favourite Team selector
+  // Populate Favourite Team custom checkbox list
+  countryList.innerHTML = "";
   Array.from(countries).sort().forEach(country => {
-    const option = document.createElement("option");
-    option.value = country;
-    option.textContent = country;
-    selCountry.appendChild(option);
+    const item = document.createElement("div");
+    item.className = "multiselect-item";
+    item.dataset.value = country;
+    
+    const code = countryCodes[country];
+    let flagHtml = `<i data-lucide="soccer-ball" class="multiselect-flag-placeholder"></i>`;
+    if (code) {
+      flagHtml = `<img src="https://flagcdn.com/w40/${code}.png" alt="${country}" class="multiselect-flag">`;
+    }
+    
+    const inputId = `chk_country_${cleanFilename(country)}`;
+    item.innerHTML = `
+      <input type="checkbox" id="${inputId}" value="${country}">
+      <div class="multiselect-flag-container">${flagHtml}</div>
+      <label for="${inputId}">${country}</label>
+    `;
+    
+    // Bind click events on custom item clicks
+    item.querySelector("input").addEventListener("change", (e) => {
+      handleCountryCheckboxChange(country, e.target.checked);
+    });
+    
+    countryList.appendChild(item);
   });
   
-  // Populate Venues selector
-  Array.from(venues).sort().forEach(venue => {
-    const option = document.createElement("option");
-    option.value = venue;
-    // Show only City/Stadium name nicely
-    const parts = venue.split(', ');
-    option.textContent = parts[parts.length - 1] || venue;
-    selVenue.appendChild(option);
+  // Populate Groups custom checkbox list
+  groupList.innerHTML = "";
+  Array.from(groups).sort().forEach(groupName => {
+    const item = document.createElement("div");
+    item.className = "multiselect-item";
+    item.dataset.value = groupName;
+    
+    const inputId = `chk_group_${cleanFilename(groupName)}`;
+    
+    item.innerHTML = `
+      <input type="checkbox" id="${inputId}" value="${groupName}">
+      <i data-lucide="globe" class="multiselect-venue-icon"></i>
+      <label for="${inputId}">${groupName}</label>
+    `;
+    
+    // Bind click events on custom item clicks
+    item.querySelector("input").addEventListener("change", (e) => {
+      handleGroupCheckboxChange(groupName, e.target.checked);
+    });
+    
+    groupList.appendChild(item);
   });
+  
+  // Populate Venues custom checkbox list (shows cities)
+  venueList.innerHTML = "";
+  Array.from(venues).sort().forEach(city => {
+    const item = document.createElement("div");
+    item.className = "multiselect-item";
+    item.dataset.value = city;
+    
+    const inputId = `chk_venue_${cleanFilename(city)}`;
+    
+    item.innerHTML = `
+      <input type="checkbox" id="${inputId}" value="${city}">
+      <i data-lucide="map-pin" class="multiselect-venue-icon"></i>
+      <label for="${inputId}" title="${city}">${city}</label>
+    `;
+    
+    // Bind click events on custom item clicks
+    item.querySelector("input").addEventListener("change", (e) => {
+      handleVenueCheckboxChange(city, e.target.checked);
+    });
+    
+    venueList.appendChild(item);
+  });
+  
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 }
 
 // Helper to check if a team is a placeholder
@@ -252,16 +317,16 @@ function isPlaceholderTeam(teamName) {
 // 5. Apply filters and render the matches timeline
 function applyFilters() {
   filteredMatches = rawMatches.filter(match => {
-    // Search filter
-    if (activeFilters.search) {
-      const q = activeFilters.search.toLowerCase();
-      const matchText = `${match.country_a} ${match.country_b} ${match.stage} ${match.group} ${match.location}`.toLowerCase();
-      if (!matchText.includes(q)) return false;
+    // Country multi-select filter (matches team A or team B)
+    if (activeFilters.country.size > 0) {
+      if (!activeFilters.country.has(match.country_a) && !activeFilters.country.has(match.country_b)) {
+        return false;
+      }
     }
     
-    // Country filter (matches team A or team B)
-    if (activeFilters.country !== 'ALL') {
-      if (match.country_a !== activeFilters.country && match.country_b !== activeFilters.country) {
+    // Group multi-select filter
+    if (activeFilters.group.size > 0) {
+      if (!match.group || !activeFilters.group.has(match.group)) {
         return false;
       }
     }
@@ -271,14 +336,10 @@ function applyFilters() {
       if (match.stage !== activeFilters.stage) return false;
     }
     
-    // Venue filter
-    if (activeFilters.venue !== 'ALL') {
-      if (match.location !== activeFilters.venue) return false;
-    }
-    
-    // Group filter
-    if (activeFilters.group !== 'ALL') {
-      if (match.group !== activeFilters.group) return false;
+    // Venue (city) multi-select filter
+    if (activeFilters.venue.size > 0) {
+      const city = match.location.split(', ').pop();
+      if (!activeFilters.venue.has(city)) return false;
     }
     
     return true;
@@ -287,6 +348,7 @@ function applyFilters() {
   renderTimeline();
   updateStatsBar();
   updateSyncDescription();
+  renderActiveFilterPills();
 }
 
 // Update Match count and Reset buttons
@@ -304,11 +366,10 @@ function updateStatsBar() {
   }
   
   // Show reset button if filters are active
-  const isFiltered = activeFilters.search !== '' || 
-                     activeFilters.country !== 'ALL' || 
+  const isFiltered = activeFilters.country.size > 0 || 
+                     activeFilters.group.size > 0 || 
                      activeFilters.stage !== 'ALL' || 
-                     activeFilters.venue !== 'ALL' || 
-                     activeFilters.group !== 'ALL';
+                     activeFilters.venue.size > 0;
   
   resetBtn.style.display = isFiltered ? "inline-flex" : "none";
 }
@@ -319,8 +380,9 @@ function updateSyncDescription() {
   const bottomSyncDesc = document.getElementById("bottomSyncDescription");
   
   let descText = "";
-  if (activeFilters.country !== 'ALL') {
-    descText = `3 matches involving <strong>${activeFilters.country}</strong>, customized for you`;
+  if (activeFilters.country.size > 0) {
+    const list = Array.from(activeFilters.country).join(', ');
+    descText = `Matches involving <strong>${list}</strong> (${filteredMatches.length} matches)`;
   } else if (filteredMatches.length !== rawMatches.length) {
     descText = `<strong>${filteredMatches.length}</strong> selected matches based on your active filters`;
   } else {
@@ -405,8 +467,8 @@ function createMatchCard(match) {
   const card = document.createElement("article");
   card.className = "match-card glass-card";
   
-  const isFavCountryA = activeFilters.country !== 'ALL' && match.country_a === activeFilters.country;
-  const isFavCountryB = activeFilters.country !== 'ALL' && match.country_b === activeFilters.country;
+  const isFavCountryA = activeFilters.country.size > 0 && activeFilters.country.has(match.country_a);
+  const isFavCountryB = activeFilters.country.size > 0 && activeFilters.country.has(match.country_b);
   
   // Teams HTML with Flags
   const teamAHtml = getTeamRowHtml(match.country_a, isFavCountryA);
@@ -643,9 +705,13 @@ function downloadFilteredMatchesIcs() {
   let suffix = "All Matches";
   let filename = "worldcup_2026_all_matches.ics";
   
-  if (activeFilters.country !== 'ALL') {
-    suffix = `${activeFilters.country} Matches`;
-    filename = `worldcup_2026_${cleanFilename(activeFilters.country)}.ics`;
+  if (activeFilters.country.size === 1) {
+    const singleCountry = Array.from(activeFilters.country)[0];
+    suffix = `${singleCountry} Matches`;
+    filename = `worldcup_2026_${cleanFilename(singleCountry)}.ics`;
+  } else if (activeFilters.country.size > 1) {
+    suffix = "Custom Teams Matches";
+    filename = "worldcup_2026_custom_teams.ics";
   } else if (filteredMatches.length !== rawMatches.length) {
     suffix = "Filtered Matches";
     filename = "worldcup_2026_custom_matches.ics";
@@ -657,11 +723,6 @@ function downloadFilteredMatchesIcs() {
 
 // 10. Event Handlers & Modal Interactions
 function setupEventHandlers() {
-  const txtSearch = document.getElementById("txtSearch");
-  const btnClearSearch = document.getElementById("btnClearSearch");
-  const selCountry = document.getElementById("selCountry");
-  const selVenue = document.getElementById("selVenue");
-  const selGroup = document.getElementById("selGroup");
   const stageFilters = document.getElementById("stageFilters");
   const timezoneToggle = document.getElementById("timezoneToggle");
   
@@ -669,36 +730,30 @@ function setupEventHandlers() {
   const btnReset = document.getElementById("btnResetFilters");
   btnReset.addEventListener("click", resetAllFilters);
   
-  // Search input
-  txtSearch.addEventListener("input", (e) => {
-    activeFilters.search = e.target.value.trim();
-    btnClearSearch.style.display = activeFilters.search ? "block" : "none";
-    applyFilters();
-  });
+  // Setup Custom Multiselect Triggers
+  setupMultiselectTrigger("multiSelectCountry", "countryTrigger");
+  setupMultiselectTrigger("multiSelectGroup", "groupTrigger");
+  setupMultiselectTrigger("multiSelectVenue", "venueTrigger");
   
-  btnClearSearch.addEventListener("click", () => {
-    txtSearch.value = "";
-    activeFilters.search = "";
-    btnClearSearch.style.display = "none";
-    applyFilters();
-  });
+  // Setup Autocomplete Search inside Custom Panels
+  setupMultiselectSearch("multiSelectCountry", "countryList");
+  setupMultiselectSearch("multiSelectGroup", "groupList");
+  setupMultiselectSearch("multiSelectVenue", "venueList");
   
-  // Dropdown Selectors
-  selCountry.addEventListener("change", (e) => {
-    activeFilters.country = e.target.value;
-    applyFilters();
-  });
+  // Setup Select All / Clear Actions
+  setupMultiselectActions("btnCountryAll", "btnCountryClear", "countryList", "country");
+  setupMultiselectActions("btnGroupAll", "btnGroupClear", "groupList", "group");
+  setupMultiselectActions("btnVenueAll", "btnVenueClear", "venueList", "venue");;
   
-  selVenue.addEventListener("change", (e) => {
-    activeFilters.venue = e.target.value;
-    applyFilters();
+  // Close multiselects when clicking away
+  document.addEventListener("click", (e) => {
+    document.querySelectorAll(".multiselect-container").forEach(container => {
+      if (!container.contains(e.target)) {
+        container.classList.remove("active");
+      }
+    });
   });
 
-  selGroup.addEventListener("change", (e) => {
-    activeFilters.group = e.target.value;
-    applyFilters();
-  });
-  
   // Stage Pills selector
   stageFilters.addEventListener("click", (e) => {
     const pill = e.target.closest(".pill");
@@ -747,26 +802,256 @@ function setupEventHandlers() {
   });
 }
 
+// Custom Multiselect Helper Functions
+function setupMultiselectTrigger(containerId, triggerId) {
+  const container = document.getElementById(containerId);
+  const trigger = document.getElementById(triggerId);
+  
+  if (trigger && container) {
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Close other multiselects first
+      document.querySelectorAll(".multiselect-container").forEach(c => {
+        if (c !== container) c.classList.remove("active");
+      });
+      container.classList.toggle("active");
+    });
+  }
+}
+
+function setupMultiselectSearch(containerId, listId) {
+  const container = document.getElementById(containerId);
+  const searchInput = container.querySelector(".multiselect-search");
+  const list = document.getElementById(listId);
+  
+  if (searchInput && list) {
+    searchInput.addEventListener("input", (e) => {
+      const q = e.target.value.toLowerCase();
+      const items = list.querySelectorAll(".multiselect-item");
+      items.forEach(item => {
+        const text = item.dataset.value.toLowerCase();
+        item.style.display = text.includes(q) ? "flex" : "none";
+      });
+    });
+  }
+}
+
+function setupMultiselectActions(allId, clearId, listId, type) {
+  const btnAll = document.getElementById(allId);
+  const btnClear = document.getElementById(clearId);
+  const list = document.getElementById(listId);
+  
+  if (btnAll && list) {
+    btnAll.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const visibleCheckboxes = Array.from(list.querySelectorAll(".multiselect-item"))
+        .filter(item => item.style.display !== "none")
+        .map(item => item.querySelector("input[type='checkbox']"));
+        
+      visibleCheckboxes.forEach(chk => {
+        if (chk) {
+          chk.checked = true;
+          if (type === "country") activeFilters.country.add(chk.value);
+          if (type === "group") activeFilters.group.add(chk.value);
+          if (type === "venue") activeFilters.venue.add(chk.value);
+        }
+      });
+      updateTriggerTexts();
+      applyFilters();
+    });
+  }
+  
+  if (btnClear && list) {
+    btnClear.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const checkboxes = list.querySelectorAll(".multiselect-item input[type='checkbox']");
+      checkboxes.forEach(chk => {
+        chk.checked = false;
+        if (type === "country") activeFilters.country.delete(chk.value);
+        if (type === "group") activeFilters.group.delete(chk.value);
+        if (type === "venue") activeFilters.venue.delete(chk.value);
+      });
+      updateTriggerTexts();
+      applyFilters();
+    });
+  }
+}
+
+function handleCountryCheckboxChange(country, isChecked) {
+  if (isChecked) {
+    activeFilters.country.add(country);
+  } else {
+    activeFilters.country.delete(country);
+  }
+  updateTriggerTexts();
+  applyFilters();
+}
+
+function handleGroupCheckboxChange(group, isChecked) {
+  if (isChecked) {
+    activeFilters.group.add(group);
+  } else {
+    activeFilters.group.delete(group);
+  }
+  updateTriggerTexts();
+  applyFilters();
+}
+
+function handleVenueCheckboxChange(venue, isChecked) {
+  if (isChecked) {
+    activeFilters.venue.add(venue);
+  } else {
+    activeFilters.venue.delete(venue);
+  }
+  updateTriggerTexts();
+  applyFilters();
+}
+
+function updateTriggerTexts() {
+  const countryTrigger = document.querySelector("#countryTrigger .trigger-text");
+  const groupTrigger = document.querySelector("#groupTrigger .trigger-text");
+  const venueTrigger = document.querySelector("#venueTrigger .trigger-text");
+  
+  // Country Trigger Text
+  if (activeFilters.country.size === 0) {
+    countryTrigger.textContent = "All Teams";
+  } else if (activeFilters.country.size === 1) {
+    countryTrigger.textContent = Array.from(activeFilters.country)[0];
+  } else if (activeFilters.country.size <= 2) {
+    countryTrigger.textContent = Array.from(activeFilters.country).join(", ");
+  } else {
+    countryTrigger.textContent = `${activeFilters.country.size} Teams Selected`;
+  }
+  
+  // Group Trigger Text
+  if (activeFilters.group.size === 0) {
+    groupTrigger.textContent = "All Groups";
+  } else if (activeFilters.group.size === 1) {
+    groupTrigger.textContent = Array.from(activeFilters.group)[0];
+  } else if (activeFilters.group.size <= 2) {
+    groupTrigger.textContent = Array.from(activeFilters.group).join(", ");
+  } else {
+    groupTrigger.textContent = `${activeFilters.group.size} Groups Selected`;
+  }
+  
+  // Venue Trigger Text (Cities)
+  if (activeFilters.venue.size === 0) {
+    venueTrigger.textContent = "All Cities";
+  } else if (activeFilters.venue.size === 1) {
+    venueTrigger.textContent = Array.from(activeFilters.venue)[0];
+  } else if (activeFilters.venue.size <= 2) {
+    venueTrigger.textContent = Array.from(activeFilters.venue).join(", ");
+  } else {
+    venueTrigger.textContent = `${activeFilters.venue.size} Cities Selected`;
+  }
+}
+
+// Populate and render small removable filter pills
+function renderActiveFilterPills() {
+  const pillsContainer = document.getElementById("activePillsContainer");
+  pillsContainer.innerHTML = "";
+  
+  if (activeFilters.country.size === 0 && activeFilters.group.size === 0 && activeFilters.venue.size === 0) {
+    pillsContainer.style.display = "none";
+    return;
+  }
+  
+  pillsContainer.style.display = "flex";
+  
+  // 1. Country pills
+  activeFilters.country.forEach(country => {
+    const pill = document.createElement("div");
+    pill.className = "active-pill";
+    
+    const code = countryCodes[country];
+    let flagHtml = "";
+    if (code) {
+      flagHtml = `<img src="https://flagcdn.com/w40/${code}.png" alt="${country}" class="active-pill-flag">`;
+    }
+    
+    pill.innerHTML = `
+      ${flagHtml}
+      <span>${country}</span>
+      <button class="active-pill-remove" title="Remove filter">&times;</button>
+    `;
+    
+    pill.querySelector(".active-pill-remove").addEventListener("click", () => {
+      const chk = document.querySelector(`#chk_country_${cleanFilename(country)}`);
+      if (chk) chk.checked = false;
+      activeFilters.country.delete(country);
+      updateTriggerTexts();
+      applyFilters();
+    });
+    
+    pillsContainer.appendChild(pill);
+  });
+  
+  // 2. Group pills
+  activeFilters.group.forEach(groupName => {
+    const pill = document.createElement("div");
+    pill.className = "active-pill pill-group-pill";
+    
+    pill.innerHTML = `
+      <i data-lucide="globe" class="active-pill-icon"></i>
+      <span>${groupName}</span>
+      <button class="active-pill-remove" title="Remove filter">&times;</button>
+    `;
+    
+    pill.querySelector(".active-pill-remove").addEventListener("click", () => {
+      const chk = document.querySelector(`#chk_group_${cleanFilename(groupName)}`);
+      if (chk) chk.checked = false;
+      activeFilters.group.delete(groupName);
+      updateTriggerTexts();
+      applyFilters();
+    });
+    
+    pillsContainer.appendChild(pill);
+  });
+  
+  // 3. Venue pills (Cities)
+  activeFilters.venue.forEach(city => {
+    const pill = document.createElement("div");
+    pill.className = "active-pill pill-venue";
+    
+    pill.innerHTML = `
+      <i data-lucide="map-pin" class="active-pill-icon"></i>
+      <span>${city}</span>
+      <button class="active-pill-remove" title="Remove filter">&times;</button>
+    `;
+    
+    pill.querySelector(".active-pill-remove").addEventListener("click", () => {
+      const chk = document.querySelector(`#chk_venue_${cleanFilename(city)}`);
+      if (chk) chk.checked = false;
+      activeFilters.venue.delete(city);
+      updateTriggerTexts();
+      applyFilters();
+    });
+    
+    pillsContainer.appendChild(pill);
+  });
+  
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+}
+
 function resetAllFilters() {
-  document.getElementById("txtSearch").value = "";
-  document.getElementById("btnClearSearch").style.display = "none";
-  document.getElementById("selCountry").value = "ALL";
-  document.getElementById("selVenue").value = "ALL";
-  document.getElementById("selGroup").value = "ALL";
+  // Uncheck all custom country, group, and venue checkboxes
+  document.querySelectorAll("#countryList input[type='checkbox']").forEach(chk => chk.checked = false);
+  document.querySelectorAll("#groupList input[type='checkbox']").forEach(chk => chk.checked = false);
+  document.querySelectorAll("#venueList input[type='checkbox']").forEach(chk => chk.checked = false);
+  
+  activeFilters.country.clear();
+  activeFilters.group.clear();
+  activeFilters.venue.clear();
   
   const stageFilters = document.getElementById("stageFilters");
   stageFilters.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
   stageFilters.querySelector("[data-stage='ALL']").classList.add("active");
   
-  activeFilters = {
-    search: '',
-    country: 'ALL',
-    stage: 'ALL',
-    venue: 'ALL',
-    group: 'ALL',
-    timezone: activeFilters.timezone // Keep active timezone selection
-  };
+  activeFilters.stage = "ALL";
   
+  updateTriggerTexts();
   applyFilters();
 }
 
@@ -778,31 +1063,41 @@ function openGoogleCalendarModal() {
   const txtIcsUrl = document.getElementById("txtIcsUrl");
   const modalDownloadBtn = document.getElementById("modalDownloadBtn");
   
-  // 1. Set Calendar text based on filter
   let calendarTitle = "All Matches";
-  let staticFilename = "all.ics";
   
-  if (activeFilters.country !== 'ALL') {
-    calendarTitle = `${activeFilters.country} Matches`;
-    staticFilename = `${cleanFilename(activeFilters.country)}.ics`;
-  } else if (filteredMatches.length !== rawMatches.length) {
-    calendarTitle = "Custom Matches Calendar";
-  }
-  
-  modalCalendarName.textContent = calendarTitle;
-  
-  // 2. Derive domain URL for Google Calendar CID subscription
-  // Fallback to the production domain worldcup-2026-calendar.web.app
-  const origin = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-    ? 'https://worldcup-2026-calendar.web.app' 
-    : window.location.origin;
+  if (activeFilters.country.size > 1) {
+    // Multi-select subscription adapt
+    modalCalendarName.textContent = `${activeFilters.country.size} Teams Selected`;
+    txtIcsUrl.value = "Direct URL sync is only supported for single-team feeds.";
+    modalDirectSyncLink.style.pointerEvents = "none";
+    modalDirectSyncLink.style.opacity = "0.5";
+    modalDirectSyncLink.innerHTML = `Google Sync (Single Team Only)`;
     
-  const icsFileUrl = `${origin}/calendars/${staticFilename}`;
-  txtIcsUrl.value = icsFileUrl;
-  
-  // Set Google Calendar direct CID subscription link
-  const gcalSyncUrl = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(icsFileUrl)}`;
-  modalDirectSyncLink.href = gcalSyncUrl;
+  } else {
+    // Single country or all matches
+    modalDirectSyncLink.style.pointerEvents = "auto";
+    modalDirectSyncLink.style.opacity = "1";
+    modalDirectSyncLink.innerHTML = `<i data-lucide="calendar-plus"></i> Open Google Calendar`;
+    
+    let staticFilename = "all.ics";
+    if (activeFilters.country.size === 1) {
+      const singleCountry = Array.from(activeFilters.country)[0];
+      calendarTitle = `${singleCountry} Matches`;
+      staticFilename = `${cleanFilename(singleCountry)}.ics`;
+    }
+    
+    modalCalendarName.textContent = calendarTitle;
+    
+    const origin = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+      ? 'https://worldcup-2026-calendar.web.app' 
+      : window.location.origin;
+      
+    const icsFileUrl = `${origin}/calendars/${staticFilename}`;
+    txtIcsUrl.value = icsFileUrl;
+    
+    const gcalSyncUrl = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(icsFileUrl)}`;
+    modalDirectSyncLink.href = gcalSyncUrl;
+  }
   
   // Reset Copy Button State
   const btnCopyUrl = document.getElementById("btnCopyUrl");
@@ -812,6 +1107,7 @@ function openGoogleCalendarModal() {
   // Setup copy to clipboard click event
   btnCopyUrl.replaceWith(btnCopyUrl.cloneNode(true)); // Clear previous listeners
   document.getElementById("btnCopyUrl").addEventListener("click", () => {
+    if (activeFilters.country.size > 1) return;
     txtIcsUrl.select();
     txtIcsUrl.setSelectionRange(0, 99999); // For mobile devices
     navigator.clipboard.writeText(txtIcsUrl.value);

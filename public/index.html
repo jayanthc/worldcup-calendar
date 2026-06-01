@@ -26,6 +26,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
   <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
@@ -116,19 +119,73 @@
         
         <!-- Search & Country select -->
         <div class="filter-row main-filters">
-          <div class="search-box">
-            <i data-lucide="search" class="input-icon"></i>
-            <input type="text" id="txtSearch" placeholder="Search team, stadium, or city...">
-            <button id="btnClearSearch" class="btn-clear" style="display: none;">&times;</button>
-          </div>
           
-          <div class="select-wrapper">
-            <i data-lucide="flag" class="input-icon"></i>
-            <select id="selCountry">
-              <option value="ALL">All Teams</option>
-              <!-- Populated by JavaScript -->
-            </select>
+          <!-- Team select -->
+          <div class="multiselect-container" id="multiSelectCountry">
+            <div class="multiselect-trigger" id="countryTrigger" title="Click to filter by one or more teams">
+              <i data-lucide="flag" class="trigger-icon"></i>
+              <span class="trigger-text">All Teams</span>
+              <i data-lucide="chevron-down" class="trigger-arrow"></i>
+            </div>
+            <div class="multiselect-panel">
+              <div class="multiselect-search-box">
+                <i data-lucide="search" class="multiselect-search-icon"></i>
+                <input type="text" class="multiselect-search" placeholder="Search team...">
+              </div>
+              <div class="multiselect-actions">
+                <button type="button" class="btn-multiselect-action btn-select-all" id="btnCountryAll">Select All</button>
+                <button type="button" class="btn-multiselect-action btn-clear-all" id="btnCountryClear">Clear</button>
+              </div>
+              <div class="multiselect-list" id="countryList">
+                <!-- Populated by JavaScript -->
+              </div>
+            </div>
           </div>
+
+          <!-- Group select (Custom Multiselect) -->
+          <div class="multiselect-container" id="multiSelectGroup">
+            <div class="multiselect-trigger" id="groupTrigger" title="Click to filter by one or more groups">
+              <i data-lucide="globe" class="trigger-icon"></i>
+              <span class="trigger-text">All Groups</span>
+              <i data-lucide="chevron-down" class="trigger-arrow"></i>
+            </div>
+            <div class="multiselect-panel">
+              <div class="multiselect-search-box">
+                <i data-lucide="search" class="multiselect-search-icon"></i>
+                <input type="text" class="multiselect-search" placeholder="Search group...">
+              </div>
+              <div class="multiselect-actions">
+                <button type="button" class="btn-multiselect-action btn-select-all" id="btnGroupAll">Select All</button>
+                <button type="button" class="btn-multiselect-action btn-clear-all" id="btnGroupClear">Clear</button>
+              </div>
+              <div class="multiselect-list" id="groupList">
+                <!-- Populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- City select -->
+          <div class="multiselect-container" id="multiSelectVenue">
+            <div class="multiselect-trigger" id="venueTrigger" title="Click to filter by one or more cities">
+              <i data-lucide="map-pin" class="trigger-icon"></i>
+              <span class="trigger-text">All Cities</span>
+              <i data-lucide="chevron-down" class="trigger-arrow"></i>
+            </div>
+            <div class="multiselect-panel">
+              <div class="multiselect-search-box">
+                <i data-lucide="search" class="multiselect-search-icon"></i>
+                <input type="text" class="multiselect-search" placeholder="Search city...">
+              </div>
+              <div class="multiselect-actions">
+                <button type="button" class="btn-multiselect-action btn-select-all" id="btnVenueAll">Select All</button>
+                <button type="button" class="btn-multiselect-action btn-clear-all" id="btnVenueClear">Clear</button>
+              </div>
+              <div class="multiselect-list" id="venueList">
+                <!-- Populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- Filter pills (Stage) -->
@@ -147,35 +204,6 @@
 
         <!-- Settings: Venue & Timezone -->
         <div class="filter-row settings-row">
-          <div class="settings-group">
-            <div class="select-wrapper select-sm">
-              <i data-lucide="map-pin" class="input-icon"></i>
-              <select id="selVenue">
-                <option value="ALL">All Venues</option>
-                <!-- Populated by JavaScript -->
-              </select>
-            </div>
-
-            <div class="select-wrapper select-sm">
-              <i data-lucide="globe" class="input-icon"></i>
-              <select id="selGroup">
-                <option value="ALL">All Groups</option>
-                <option value="Group A">Group A</option>
-                <option value="Group B">Group B</option>
-                <option value="Group C">Group C</option>
-                <option value="Group D">Group D</option>
-                <option value="Group E">Group E</option>
-                <option value="Group F">Group F</option>
-                <option value="Group G">Group G</option>
-                <option value="Group H">Group H</option>
-                <option value="Group I">Group I</option>
-                <option value="Group J">Group J</option>
-                <option value="Group K">Group K</option>
-                <option value="Group L">Group L</option>
-              </select>
-            </div>
-          </div>
-
           <!-- Timezone Switcher -->
           <div class="timezone-switcher">
             <span class="switcher-label"><i data-lucide="clock"></i> Timezone:</span>
@@ -187,6 +215,11 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Active Filter Pills -->
+      <div class="active-pills-container" id="activePillsContainer" style="display: none;">
+        <!-- Dynamic active pills populated by JS -->
       </div>
 
       <!-- Active Filter Stats / Info -->

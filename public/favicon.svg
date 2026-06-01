@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d285" />
+      <stop offset="100%" stop-color="#008f5a" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded backdrop matching .logo-icon border-radius -->
+  <rect width="512" height="512" rx="128" fill="url(#logo-grad)" />
+  
+  <!-- Trophy Vector in deep pitch-green stroke matching Lucide Trophy exactly -->
+  <g fill="none" stroke="#040d0a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" transform="translate(88, 88) scale(14)">
+    <!-- Left Handle -->
+    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+    <!-- Right Handle -->
+    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+    <!-- Stem and Base -->
+    <path d="M4 22h16" />
+    <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
+    <!-- Cup Body -->
+    <path d="M12 2a8 8 0 0 0-8 8h16a8 8 0 0 0-8-8z" />
+  </g>
+</svg>

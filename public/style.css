@@ -491,6 +491,8 @@ body {
 }
 
 .control-panel {
+  position: relative;
+  z-index: 10;
   padding: 1.75rem 2rem;
   display: flex;
   flex-direction: column;
@@ -506,7 +508,7 @@ body {
 
 .main-filters {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.25rem;
 }
 
@@ -601,6 +603,400 @@ body {
   color: var(--text-primary);
 }
 
+/* Custom Multiselect Styling */
+.multiselect-container {
+  position: relative;
+  width: 100%;
+}
+
+.multiselect-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.multiselect-trigger:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.multiselect-container.active .multiselect-trigger {
+  border-color: var(--accent-gold);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px rgba(229, 184, 59, 0.1);
+}
+
+.trigger-icon {
+  margin-right: 0.75rem;
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.trigger-text {
+  flex-grow: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.trigger-arrow {
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  flex-shrink: 0;
+}
+
+.multiselect-container.active .trigger-arrow {
+  transform: rotate(180deg);
+  color: var(--accent-gold);
+}
+
+/* Multiselect Panel (Dropdown) */
+.multiselect-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  width: 100%;
+  background: rgba(10, 24, 19, 0.98);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--border-glass-focus);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-main), var(--shadow-gold-glow);
+  z-index: 150;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.multiselect-container.active .multiselect-panel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Multiselect search box */
+.multiselect-search-box {
+  position: relative;
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.multiselect-search {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.multiselect-search:focus {
+  outline: none;
+  border-color: rgba(229, 184, 59, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.multiselect-search-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Multiselect actions bar (Select All / Clear) */
+.multiselect-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 0.5rem;
+}
+
+.btn-multiselect-action {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.btn-multiselect-action:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent-gold);
+}
+
+/* Multiselect items list */
+.multiselect-list {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0.25rem 0;
+  
+  --scrollbar-thumb: var(--accent-gold-glow);
+  --scrollbar-track: rgba(0, 0, 0, 0.2);
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+
+/* Custom Scrollbar Fallback */
+@supports not (scrollbar-color: auto) {
+  .multiselect-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  .multiselect-list::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 3px;
+  }
+  .multiselect-list::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+}
+
+.multiselect-item {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.multiselect-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Custom Checkbox within dropdown list */
+.multiselect-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--text-muted);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.multiselect-item input[type="checkbox"]:checked {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.multiselect-item input[type="checkbox"]:checked::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid #121008;
+  border-bottom: 2px solid #121008;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.multiselect-item label {
+  flex-grow: 1;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.multiselect-item:hover label {
+  color: var(--text-primary);
+}
+
+.multiselect-item input[type="checkbox"]:checked ~ label {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Flag & Venue icons inside list items */
+.multiselect-flag-container {
+  width: 22px;
+  height: 15px;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.multiselect-flag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.multiselect-flag-placeholder {
+  width: 12px;
+  height: 12px;
+  color: var(--text-muted);
+}
+
+.multiselect-venue-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.multiselect-item:hover .multiselect-venue-icon {
+  color: var(--accent-gold);
+}
+
+/* Custom Size for settings venue select */
+.select-sm.multiselect-container {
+  width: 200px;
+}
+
+.select-sm .multiselect-trigger {
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+}
+
+.select-sm .trigger-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 0.5rem;
+}
+
+.select-sm .trigger-arrow {
+  width: 14px;
+  height: 14px;
+}
+
+/* Active pills row styling */
+.active-pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.active-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(229, 184, 59, 0.04);
+  border: 1px solid rgba(229, 184, 59, 0.25);
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  transition: var(--transition);
+}
+
+.active-pill:hover {
+  background: rgba(229, 184, 59, 0.08);
+  border-color: rgba(229, 184, 59, 0.4);
+}
+
+.active-pill.pill-venue {
+  background: rgba(0, 210, 133, 0.03);
+  border-color: rgba(0, 210, 133, 0.2);
+  color: var(--accent-green);
+}
+
+.active-pill.pill-venue:hover {
+  background: rgba(0, 210, 133, 0.06);
+  border-color: rgba(0, 210, 133, 0.35);
+}
+
+.active-pill.pill-group-pill {
+  background: rgba(0, 180, 216, 0.03);
+  border-color: rgba(0, 180, 216, 0.2);
+  color: #00b4d8;
+}
+
+.active-pill.pill-group-pill:hover {
+  background: rgba(0, 180, 216, 0.06);
+  border-color: rgba(0, 180, 216, 0.35);
+}
+
+.active-pill-flag {
+  width: 14px;
+  height: auto;
+  border-radius: 1px;
+}
+
+.active-pill-icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.active-pill-remove {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-left: 0.2rem;
+  line-height: 1;
+  transition: var(--transition);
+  opacity: 0.7;
+}
+
+.active-pill-remove:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
 /* Pills */
 .filter-label {
   font-family: var(--font-display);
@@ -647,7 +1043,7 @@ body {
 
 /* Settings Row */
 .settings-row {
-  justify-content: space-between;
+  justify-content: flex-end;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   padding-top: 1.25rem;
 }
