@@ -953,14 +953,14 @@ body {
   color: var(--text-secondary);
   cursor: pointer;
   width: 100%;
-  max-width: 140px;
+  max-width: 160px;
   justify-content: center;
   transition: var(--transition);
 }
 
 .btn-card:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
   color: var(--text-primary);
 }
 
@@ -975,6 +975,19 @@ body {
   color: #121008;
   border-color: var(--accent-gold);
   box-shadow: 0 2px 10px rgba(229, 184, 59, 0.2);
+}
+
+.btn-card-green {
+  background: rgba(0, 210, 133, 0.06);
+  border-color: rgba(0, 210, 133, 0.15);
+  color: var(--accent-green);
+}
+
+.btn-card-green:hover {
+  background: var(--accent-green);
+  color: #040d0a;
+  border-color: var(--accent-green);
+  box-shadow: 0 2px 10px rgba(0, 210, 133, 0.2);
 }
 
 .btn-card svg,

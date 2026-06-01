@@ -438,11 +438,11 @@ function createMatchCard(match) {
     </div>
     
     <div class="match-actions">
-      <a href="${gcalUrl}" target="_blank" class="btn-card btn-card-primary" title="Add this match to your Google Calendar">
+      <a href="${gcalUrl}" target="_blank" class="btn-card btn-card-green" title="Add this match to your Google Calendar">
         <i data-lucide="calendar-plus"></i>
-        <span>+ Google Cal</span>
+        <span>+ Google Calendar</span>
       </a>
-      <button class="btn-card btn-download-match" title="Download ICS for this match">
+      <button class="btn-card btn-card-primary btn-download-match" title="Download ICS for this match">
         <i data-lucide="download"></i>
         <span>Download ICS</span>
       </button>

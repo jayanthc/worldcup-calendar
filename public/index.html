@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   
@@ -90,11 +90,6 @@
         </div>
         
         <div class="sync-actions">
-          <button id="btnDownloadIcs" class="btn btn-primary btn-full" title="Download iCalendar .ics file">
-            <i data-lucide="download"></i>
-            <span>Download .ics File</span>
-          </button>
-          
           <div class="sync-subscription-group">
             <button id="btnGoogleCalendar" class="btn btn-primary btn-green btn-full" title="Add calendar to Google Calendar without downloading">
               <i data-lucide="calendar-plus"></i>
@@ -104,6 +99,11 @@
               <i data-lucide="refresh-cw"></i> Live auto-updates on schedule changes
             </span>
           </div>
+          
+          <button id="btnDownloadIcs" class="btn btn-primary btn-full" title="Download iCalendar .ics file">
+            <i data-lucide="download"></i>
+            <span>Download .ics File</span>
+          </button>
         </div>
       </div>
     </section>
@@ -217,14 +217,14 @@
           <p id="bottomSyncDescription">All 104 matches, ready for your device</p>
         </div>
         <div class="bottom-sync-actions">
-          <button id="btnBottomDownloadIcs" class="btn btn-primary" title="Download iCalendar .ics file for selected matches">
-            <i data-lucide="download"></i>
-            <span>Download .ics</span>
-          </button>
-          
           <button id="btnBottomGoogleCalendar" class="btn btn-primary btn-green" title="Sync selected matches with Google Calendar">
             <i data-lucide="calendar-plus"></i>
             <span>Sync Google Calendar</span>
+          </button>
+          
+          <button id="btnBottomDownloadIcs" class="btn btn-primary" title="Download iCalendar .ics file for selected matches">
+            <i data-lucide="download"></i>
+            <span>Download .ics</span>
           </button>
         </div>
       </div>
