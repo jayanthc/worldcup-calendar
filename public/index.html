@@ -223,6 +223,44 @@
             </div>
           </div>
 
+          <!-- Host Country select -->
+          <div class="multiselect-container" id="multiSelectHostCountry">
+            <div class="multiselect-trigger" id="hostCountryTrigger" title="Click to filter by one or more host countries">
+              <i data-lucide="globe-2" class="trigger-icon"></i>
+              <span class="trigger-text">All Hosts</span>
+              <i data-lucide="chevron-down" class="trigger-arrow"></i>
+            </div>
+            <div class="multiselect-panel">
+              <div class="multiselect-actions">
+                <button type="button" class="btn-multiselect-action btn-select-all" id="btnHostCountryAll">Select All</button>
+                <button type="button" class="btn-multiselect-action btn-clear-all" id="btnHostCountryClear">Clear</button>
+              </div>
+              <div class="multiselect-list" id="hostCountryList">
+                <div class="multiselect-item">
+                  <input type="checkbox" value="Canada" id="chk_hostCountry_Canada">
+                  <div class="multiselect-flag-container">
+                    <img src="https://flagcdn.com/w40/ca.png" alt="Canada" class="multiselect-flag">
+                  </div>
+                  <label for="chk_hostCountry_Canada">Canada</label>
+                </div>
+                <div class="multiselect-item">
+                  <input type="checkbox" value="Mexico" id="chk_hostCountry_Mexico">
+                  <div class="multiselect-flag-container">
+                    <img src="https://flagcdn.com/w40/mx.png" alt="Mexico" class="multiselect-flag">
+                  </div>
+                  <label for="chk_hostCountry_Mexico">Mexico</label>
+                </div>
+                <div class="multiselect-item">
+                  <input type="checkbox" value="US" id="chk_hostCountry_US">
+                  <div class="multiselect-flag-container">
+                    <img src="https://flagcdn.com/w40/us.png" alt="United States" class="multiselect-flag">
+                  </div>
+                  <label for="chk_hostCountry_US">United States</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- Filter pills (Stage) -->
@@ -315,6 +353,9 @@
       <div class="modal-body">
         <p class="modal-intro">
           You are about to subscribe to <strong id="modalCalendarName">All Matches</strong>. Subscribing keeps your calendar automatically updated in real-time if matches change.
+          <span style="display: block; margin-top: 0.5rem; color: #ff6b6b; font-size: 0.8rem; font-weight: 500; opacity: 0.95;">
+            ⚠️ <strong>Warning:</strong> Google Calendar does not support a single-click 'delete all' for individual event imports. Please confirm your selection above.
+          </span>
         </p>
 
         <div class="modal-steps">

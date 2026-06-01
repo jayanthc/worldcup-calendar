@@ -8,6 +8,7 @@ let activeFilters = {
   group: new Set(),   // Set of selected group names (empty means All Groups)
   stage: 'ALL',
   venue: new Set(),   // Set of selected city names (empty means All Cities)
+  hostCountry: new Set(), // Set of selected host countries (empty means All Host Countries)
   timezone: 'local'   // 'local', 'venue', 'utc'
 };
 
@@ -84,6 +85,26 @@ const stadiumTimezones = {
   "Mercedes-Benz Stadium, Atlanta": "America/New_York",
   "Lumen Field, Seattle": "America/Los_Angeles",
   "Arrowhead Stadium, Kansas City": "America/Chicago"
+};
+
+// Stadium Host Countries Map
+const stadiumCountries = {
+  "Estadio Azteca, Mexico City": "Mexico",
+  "Estadio Akron, Zapopan": "Mexico",
+  "BMO Field, Toronto": "Canada",
+  "SoFi Stadium, Inglewood": "US",
+  "Gillette Stadium, Foxborough": "US",
+  "BC Place, Vancouver": "Canada",
+  "MetLife Stadium, East Rutherford": "US",
+  "Levi's Stadium, Santa Clara": "US",
+  "Lincoln Financial Field, Philadelphia": "US",
+  "NRG Stadium, Houston": "US",
+  "AT&T Stadium, Arlington": "US",
+  "Estadio BBVA, Guadalupe": "Mexico",
+  "Hard Rock Stadium, Miami Gardens": "US",
+  "Mercedes-Benz Stadium, Atlanta": "US",
+  "Lumen Field, Seattle": "US",
+  "Arrowhead Stadium, Kansas City": "US"
 };
 
 // Helper: Clean name to match generated ICS file names
@@ -318,6 +339,19 @@ function populateFilters() {
     venueList.appendChild(item);
   });
 
+  // Bind click events on Host Country checkboxes
+  const hostCountryList = document.getElementById("hostCountryList");
+  if (hostCountryList) {
+    hostCountryList.querySelectorAll("input[type='checkbox']").forEach(chk => {
+      // Set dataset.value for Select All / Clear filter search matching
+      chk.closest(".multiselect-item").dataset.value = chk.value;
+
+      chk.addEventListener("change", (e) => {
+        handleHostCountryCheckboxChange(chk.value, e.target.checked);
+      });
+    });
+  }
+
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
   }
@@ -359,6 +393,12 @@ function applyFilters() {
       if (!activeFilters.venue.has(city)) return false;
     }
 
+    // Host Country multi-select filter
+    if (activeFilters.hostCountry.size > 0) {
+      const hostCountry = stadiumCountries[match.location];
+      if (!activeFilters.hostCountry.has(hostCountry)) return false;
+    }
+
     return true;
   });
 
@@ -386,7 +426,8 @@ function updateStatsBar() {
   const isFiltered = activeFilters.country.size > 0 ||
                      activeFilters.group.size > 0 ||
                      activeFilters.stage !== 'ALL' ||
-                     activeFilters.venue.size > 0;
+                     activeFilters.venue.size > 0 ||
+                     activeFilters.hostCountry.size > 0;
 
   resetBtn.style.display = isFiltered ? "inline-flex" : "none";
 }
@@ -765,6 +806,7 @@ function setupEventHandlers() {
   setupMultiselectTrigger("multiSelectCountry", "countryTrigger");
   setupMultiselectTrigger("multiSelectGroup", "groupTrigger");
   setupMultiselectTrigger("multiSelectVenue", "venueTrigger");
+  setupMultiselectTrigger("multiSelectHostCountry", "hostCountryTrigger");
 
   // Setup Autocomplete Search inside Custom Panels
   setupMultiselectSearch("multiSelectCountry", "countryList");
@@ -774,7 +816,8 @@ function setupEventHandlers() {
   // Setup Select All / Clear Actions
   setupMultiselectActions("btnCountryAll", "btnCountryClear", "countryList", "country");
   setupMultiselectActions("btnGroupAll", "btnGroupClear", "groupList", "group");
-  setupMultiselectActions("btnVenueAll", "btnVenueClear", "venueList", "venue");;
+  setupMultiselectActions("btnVenueAll", "btnVenueClear", "venueList", "venue");
+  setupMultiselectActions("btnHostCountryAll", "btnHostCountryClear", "hostCountryList", "hostCountry");
 
   // Close multiselects when clicking away
   document.addEventListener("click", (e) => {
@@ -893,6 +936,7 @@ function setupMultiselectActions(allId, clearId, listId, type) {
           if (type === "country") activeFilters.country.add(chk.value);
           if (type === "group") activeFilters.group.add(chk.value);
           if (type === "venue") activeFilters.venue.add(chk.value);
+          if (type === "hostCountry") activeFilters.hostCountry.add(chk.value);
         }
       });
       updateTriggerTexts();
@@ -909,6 +953,7 @@ function setupMultiselectActions(allId, clearId, listId, type) {
         if (type === "country") activeFilters.country.delete(chk.value);
         if (type === "group") activeFilters.group.delete(chk.value);
         if (type === "venue") activeFilters.venue.delete(chk.value);
+        if (type === "hostCountry") activeFilters.hostCountry.delete(chk.value);
       });
       updateTriggerTexts();
       applyFilters();
@@ -941,6 +986,16 @@ function handleVenueCheckboxChange(venue, isChecked) {
     activeFilters.venue.add(venue);
   } else {
     activeFilters.venue.delete(venue);
+  }
+  updateTriggerTexts();
+  applyFilters();
+}
+
+function handleHostCountryCheckboxChange(hostCountry, isChecked) {
+  if (isChecked) {
+    activeFilters.hostCountry.add(hostCountry);
+  } else {
+    activeFilters.hostCountry.delete(hostCountry);
   }
   updateTriggerTexts();
   applyFilters();
@@ -983,6 +1038,22 @@ function updateTriggerTexts() {
   } else {
     venueTrigger.textContent = `${activeFilters.venue.size} Cities Selected`;
   }
+
+  // Host Country Trigger Text
+  const hostCountryTrigger = document.querySelector("#hostCountryTrigger .trigger-text");
+  if (hostCountryTrigger) {
+    if (activeFilters.hostCountry.size === 0) {
+      hostCountryTrigger.textContent = "All Hosts";
+    } else if (activeFilters.hostCountry.size === 1) {
+      const h = Array.from(activeFilters.hostCountry)[0];
+      hostCountryTrigger.textContent = h === "US" ? "United States" : h;
+    } else if (activeFilters.hostCountry.size <= 2) {
+      const list = Array.from(activeFilters.hostCountry).map(h => h === "US" ? "United States" : h);
+      hostCountryTrigger.textContent = list.join(", ");
+    } else {
+      hostCountryTrigger.textContent = `${activeFilters.hostCountry.size} Hosts Selected`;
+    }
+  }
 }
 
 // Populate and render small removable filter pills
@@ -990,7 +1061,7 @@ function renderActiveFilterPills() {
   const pillsContainer = document.getElementById("activePillsContainer");
   pillsContainer.innerHTML = "";
 
-  if (activeFilters.country.size === 0 && activeFilters.group.size === 0 && activeFilters.venue.size === 0) {
+  if (activeFilters.country.size === 0 && activeFilters.group.size === 0 && activeFilters.venue.size === 0 && activeFilters.hostCountry.size === 0) {
     pillsContainer.style.display = "none";
     return;
   }
@@ -1069,20 +1140,49 @@ function renderActiveFilterPills() {
     pillsContainer.appendChild(pill);
   });
 
+  // 4. Host Country pills
+  activeFilters.hostCountry.forEach(country => {
+    const pill = document.createElement("div");
+    pill.className = "active-pill pill-host-country";
+
+    let flagCode = "";
+    if (country === "Canada") flagCode = "ca";
+    if (country === "Mexico") flagCode = "mx";
+    if (country === "US") flagCode = "us";
+
+    pill.innerHTML = `
+      <img src="https://flagcdn.com/w40/${flagCode}.png" alt="${country}" class="active-pill-flag">
+      <span>Host: ${country === "US" ? "United States" : country}</span>
+      <button class="active-pill-remove" title="Remove filter">&times;</button>
+    `;
+
+    pill.querySelector(".active-pill-remove").addEventListener("click", () => {
+      const chk = document.querySelector(`#chk_hostCountry_${country}`);
+      if (chk) chk.checked = false;
+      activeFilters.hostCountry.delete(country);
+      updateTriggerTexts();
+      applyFilters();
+    });
+
+    pillsContainer.appendChild(pill);
+  });
+
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
   }
 }
 
 function resetAllFilters() {
-  // Uncheck all custom country, group, and venue checkboxes
+  // Uncheck all custom country, group, venue, and host country checkboxes
   document.querySelectorAll("#countryList input[type='checkbox']").forEach(chk => chk.checked = false);
   document.querySelectorAll("#groupList input[type='checkbox']").forEach(chk => chk.checked = false);
   document.querySelectorAll("#venueList input[type='checkbox']").forEach(chk => chk.checked = false);
+  document.querySelectorAll("#hostCountryList input[type='checkbox']").forEach(chk => chk.checked = false);
 
   activeFilters.country.clear();
   activeFilters.group.clear();
   activeFilters.venue.clear();
+  activeFilters.hostCountry.clear();
 
   const stageFilters = document.getElementById("stageFilters");
   stageFilters.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
@@ -1112,16 +1212,28 @@ function openGoogleCalendarModal() {
     });
   }
 
-  if (activeFilters.country.size > 1) {
-    // Multi-select subscription adapt
-    modalCalendarName.textContent = `${activeFilters.country.size} Teams Selected`;
-    txtIcsUrl.value = "Direct URL sync is only supported for single-team feeds.";
+  const hasOtherFilters = activeFilters.group.size > 0 || 
+                          activeFilters.venue.size > 0 || 
+                          activeFilters.hostCountry.size > 0 || 
+                          activeFilters.stage !== 'ALL';
+
+  const isMultiTeam = activeFilters.country.size > 1;
+  const isCustomSelection = hasOtherFilters || isMultiTeam;
+
+  if (isCustomSelection) {
+    // Custom selection - direct URL sync not supported
+    let selectionLabel = "Custom Selection";
+    if (isMultiTeam && !hasOtherFilters) {
+      selectionLabel = `${activeFilters.country.size} Teams Selected`;
+    }
+
+    modalCalendarName.textContent = `${selectionLabel} (${filteredMatches.length} Matches)`;
+    txtIcsUrl.value = "Direct URL sync is only supported for single-team or all-match feeds.";
     modalDirectSyncLink.style.pointerEvents = "none";
     modalDirectSyncLink.style.opacity = "0.5";
-    modalDirectSyncLink.innerHTML = `Google Sync (Single Team Only)`;
-
+    modalDirectSyncLink.innerHTML = `Google Sync (Single Team/All Only)`;
   } else {
-    // Single country or all matches
+    // Single country or all matches (no other filters active)
     modalDirectSyncLink.style.pointerEvents = "auto";
     modalDirectSyncLink.style.opacity = "1";
     modalDirectSyncLink.innerHTML = `<i data-lucide="calendar-plus"></i> Open Google Calendar`;
@@ -1154,7 +1266,7 @@ function openGoogleCalendarModal() {
   // Setup copy to clipboard click event
   btnCopyUrl.replaceWith(btnCopyUrl.cloneNode(true)); // Clear previous listeners
   document.getElementById("btnCopyUrl").addEventListener("click", () => {
-    if (activeFilters.country.size > 1) return;
+    if (isCustomSelection) return;
     txtIcsUrl.select();
     txtIcsUrl.setSelectionRange(0, 99999); // For mobile devices
     navigator.clipboard.writeText(txtIcsUrl.value);

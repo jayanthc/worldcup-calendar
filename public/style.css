@@ -529,7 +529,7 @@ body {
 
 .main-filters {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1.25rem;
 }
 
@@ -1573,6 +1573,17 @@ body {
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.4;
+}
+
+#modalCalendarName {
+  color: #ff4a4a;
+  background: rgba(255, 74, 74, 0.1);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 74, 74, 0.2);
+  display: inline-block;
+  font-weight: 700;
+  margin: 0 0.15rem;
 }
 
 .modal-steps {
