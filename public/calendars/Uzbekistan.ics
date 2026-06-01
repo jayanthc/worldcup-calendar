@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Uzbekistan Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Uzbekistan_vs_Colombia@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Uzbekistan_vs_Colombia@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260618T020000Z
 DTEND:20260618T040000Z
-SUMMARY:Uzbekistan vs Colombia
+SUMMARY:🇺🇿 Uzbekistan vs 🇨🇴 Colombia
 LOCATION:Estadio Azteca, Mexico City
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: Estadio Azteca, Mexico City
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Portugal_vs_Uzbekistan@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Portugal_vs_Uzbekistan@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260623T170000Z
 DTEND:20260623T190000Z
-SUMMARY:Portugal vs Uzbekistan
+SUMMARY:🇵🇹 Portugal vs 🇺🇿 Uzbekistan
 LOCATION:NRG Stadium, Houston
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: NRG Stadium, Houston
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_DR_Congo_vs_Uzbekistan@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_DR_Congo_vs_Uzbekistan@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260627T233000Z
 DTEND:20260628T013000Z
-SUMMARY:DR Congo vs Uzbekistan
+SUMMARY:🇨🇩 DR Congo vs 🇺🇿 Uzbekistan
 LOCATION:Mercedes-Benz Stadium, Atlanta
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: Mercedes-Benz Stadium, Atlanta
 END:VEVENT

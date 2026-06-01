@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Tunisia Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Sweden_vs_Tunisia@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Sweden_vs_Tunisia@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260615T020000Z
 DTEND:20260615T040000Z
-SUMMARY:Sweden vs Tunisia
+SUMMARY:🇸🇪 Sweden vs 🇹🇳 Tunisia
 LOCATION:Estadio BBVA, Guadalupe
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: Estadio BBVA, Guadalupe
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Tunisia_vs_Japan@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Tunisia_vs_Japan@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260621T040000Z
 DTEND:20260621T060000Z
-SUMMARY:Tunisia vs Japan
+SUMMARY:🇹🇳 Tunisia vs 🇯🇵 Japan
 LOCATION:Estadio BBVA, Guadalupe
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: Estadio BBVA, Guadalupe
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Tunisia_vs_Netherlands@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Tunisia_vs_Netherlands@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260625T230000Z
 DTEND:20260626T010000Z
-SUMMARY:Tunisia vs Netherlands
+SUMMARY:🇹🇳 Tunisia vs 🇳🇱 Netherlands
 LOCATION:Arrowhead Stadium, Kansas City
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: Arrowhead Stadium, Kansas City
 END:VEVENT

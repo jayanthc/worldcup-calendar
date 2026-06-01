@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Algeria Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Argentina_vs_Algeria@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Argentina_vs_Algeria@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260617T010000Z
 DTEND:20260617T030000Z
-SUMMARY:Argentina vs Algeria
+SUMMARY:🇦🇷 Argentina vs 🇩🇿 Algeria
 LOCATION:Arrowhead Stadium, Kansas City
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group J\nVenue: Arrowhead Stadium, Kansas City
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Jordan_vs_Algeria@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Jordan_vs_Algeria@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260623T030000Z
 DTEND:20260623T050000Z
-SUMMARY:Jordan vs Algeria
+SUMMARY:🇯🇴 Jordan vs 🇩🇿 Algeria
 LOCATION:Levi's Stadium, Santa Clara
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group J\nVenue: Levi's Stadium, Santa Clara
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Algeria_vs_Austria@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Algeria_vs_Austria@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260628T020000Z
 DTEND:20260628T040000Z
-SUMMARY:Algeria vs Austria
+SUMMARY:🇩🇿 Algeria vs 🇦🇹 Austria
 LOCATION:Arrowhead Stadium, Kansas City
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group J\nVenue: Arrowhead Stadium, Kansas City
 END:VEVENT

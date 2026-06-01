@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Morocco Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Brazil_vs_Morocco@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Brazil_vs_Morocco@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260613T220000Z
 DTEND:20260614T000000Z
-SUMMARY:Brazil vs Morocco
+SUMMARY:🇧🇷 Brazil vs 🇲🇦 Morocco
 LOCATION:MetLife Stadium, East Rutherford
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: MetLife Stadium, East Rutherford
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Scotland_vs_Morocco@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Scotland_vs_Morocco@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260619T220000Z
 DTEND:20260620T000000Z
-SUMMARY:Scotland vs Morocco
+SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland vs 🇲🇦 Morocco
 LOCATION:Gillette Stadium, Foxborough
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: Gillette Stadium, Foxborough
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Morocco_vs_Haiti@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Morocco_vs_Haiti@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260624T220000Z
 DTEND:20260625T000000Z
-SUMMARY:Morocco vs Haiti
+SUMMARY:🇲🇦 Morocco vs 🇭🇹 Haiti
 LOCATION:Mercedes-Benz Stadium, Atlanta
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: Mercedes-Benz Stadium, Atlanta
 END:VEVENT

@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Czech Republic Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_South_Korea_vs_Czech_Republic@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_South_Korea_vs_Czech_Republic@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260612T020000Z
 DTEND:20260612T040000Z
-SUMMARY:South Korea vs Czech Republic
+SUMMARY:🇰🇷 South Korea vs 🇨🇿 Czech Republic
 LOCATION:Estadio Akron, Zapopan
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio Akron, Zapopan
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Czech_Republic_vs_South_Africa@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Czech_Republic_vs_South_Africa@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260618T160000Z
 DTEND:20260618T180000Z
-SUMMARY:Czech Republic vs South Africa
+SUMMARY:🇨🇿 Czech Republic vs 🇿🇦 South Africa
 LOCATION:Mercedes-Benz Stadium, Atlanta
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Mercedes-Benz Stadium, Atlanta
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Czech_Republic_vs_Mexico@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Czech_Republic_vs_Mexico@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260625T010000Z
 DTEND:20260625T030000Z
-SUMMARY:Czech Republic vs Mexico
+SUMMARY:🇨🇿 Czech Republic vs 🇲🇽 Mexico
 LOCATION:Estadio Azteca, Mexico City
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio Azteca, Mexico City
 END:VEVENT

@@ -91,6 +91,23 @@ function cleanFilename(name) {
   return name.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
 }
 
+// Helper to get flag emoji for a country name (Unicode native flag conversion)
+function getFlagEmoji(countryName) {
+  if (isPlaceholderTeam(countryName)) return "⚽";
+  const code = countryCodes[countryName];
+  if (!code) return "⚽";
+  
+  if (code === 'gb-eng') return "🏴󠁧󠁢󠁥󠁮󠁧󠁿";
+  if (code === 'gb-sct') return "🏴󠁧󠁢󠁳󠁣󠁴󠁿";
+  if (code === 'gb-wls') return "🏴󠁧󠁢󠁷󠁬󠁳󠁿";
+  
+  const codeUpper = code.toUpperCase();
+  return String.fromCodePoint(
+    127397 + codeUpper.charCodeAt(0),
+    127397 + codeUpper.charCodeAt(1)
+  );
+}
+
 // 1. Initialize Lucide Icons & App
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof lucide !== 'undefined') {
@@ -603,7 +620,9 @@ function getIndividualGoogleCalendarUrl(match) {
   const startStr = formatGCalDate(startDate);
   const endStr = formatGCalDate(endDate);
   
-  const title = `${match.country_a} vs ${match.country_b} (${match.stage})`;
+  const flagA = getFlagEmoji(match.country_a);
+  const flagB = getFlagEmoji(match.country_b);
+  const title = `${flagA} ${match.country_a} vs ${flagB} ${match.country_b} (${match.stage})`;
   const location = match.location;
   
   const descParts = [
@@ -612,7 +631,7 @@ function getIndividualGoogleCalendarUrl(match) {
   ];
   if (match.group) descParts.push(`Group: ${match.group}`);
   descParts.push(`Venue: ${location}`);
-  descParts.push(`More details: https://worldcup2026.web.app`);
+  descParts.push(`More details: https://worldcupcalendar.football`);
   
   const details = descParts.join('\n');
   
@@ -643,9 +662,11 @@ function generateICSContent(matchesList, titleSuffix) {
 
     const cleanTeamA = match.country_a.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
     const cleanTeamB = match.country_b.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
-    const uid = `match_2026_${index}_${cleanTeamA}_vs_${cleanTeamB}_client@worldcup2026.web.app`;
+    const uid = `match_2026_${index}_${cleanTeamA}_vs_${cleanTeamB}_client@worldcupcalendar.football`;
     
-    const summary = `${match.country_a} vs ${match.country_b}`;
+    const flagA = getFlagEmoji(match.country_a);
+    const flagB = getFlagEmoji(match.country_b);
+    const summary = `${flagA} ${match.country_a} vs ${flagB} ${match.country_b}`;
     const location = match.location;
     
     const descParts = [
@@ -1089,7 +1110,7 @@ function openGoogleCalendarModal() {
     modalCalendarName.textContent = calendarTitle;
     
     const origin = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-      ? 'https://worldcup-2026-calendar.web.app' 
+      ? 'https://worldcupcalendar.football' 
       : window.location.origin;
       
     const icsFileUrl = `${origin}/calendars/${staticFilename}`;

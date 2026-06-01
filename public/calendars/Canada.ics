@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Canada Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Canada_vs_Bosnia_and_Herzegovina@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Canada_vs_Bosnia_and_Herzegovina@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260612T190000Z
 DTEND:20260612T210000Z
-SUMMARY:Canada vs Bosnia and Herzegovina
+SUMMARY:🇨🇦 Canada vs 🇧🇦 Bosnia and Herzegovina
 LOCATION:BMO Field, Toronto
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BMO Field, Toronto
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Canada_vs_Qatar@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Canada_vs_Qatar@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260618T220000Z
 DTEND:20260619T000000Z
-SUMMARY:Canada vs Qatar
+SUMMARY:🇨🇦 Canada vs 🇶🇦 Qatar
 LOCATION:BC Place, Vancouver
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BC Place, Vancouver
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Switzerland_vs_Canada@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Switzerland_vs_Canada@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260624T190000Z
 DTEND:20260624T210000Z
-SUMMARY:Switzerland vs Canada
+SUMMARY:🇨🇭 Switzerland vs 🇨🇦 Canada
 LOCATION:BC Place, Vancouver
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BC Place, Vancouver
 END:VEVENT

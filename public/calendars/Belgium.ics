@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Belgium Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Belgium_vs_Egypt@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Belgium_vs_Egypt@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260615T190000Z
 DTEND:20260615T210000Z
-SUMMARY:Belgium vs Egypt
+SUMMARY:🇧🇪 Belgium vs 🇪🇬 Egypt
 LOCATION:Lumen Field, Seattle
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group G\nVenue: Lumen Field, Seattle
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Belgium_vs_Iran@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Belgium_vs_Iran@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260621T190000Z
 DTEND:20260621T210000Z
-SUMMARY:Belgium vs Iran
+SUMMARY:🇧🇪 Belgium vs 🇮🇷 Iran
 LOCATION:SoFi Stadium, Inglewood
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group G\nVenue: SoFi Stadium, Inglewood
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_New_Zealand_vs_Belgium@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_New_Zealand_vs_Belgium@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260627T030000Z
 DTEND:20260627T050000Z
-SUMMARY:New Zealand vs Belgium
+SUMMARY:🇳🇿 New Zealand vs 🇧🇪 Belgium
 LOCATION:BC Place, Vancouver
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group G\nVenue: BC Place, Vancouver
 END:VEVENT

@@ -3,6 +3,70 @@ import csv
 import re
 from datetime import datetime, timedelta
 
+COUNTRY_FLAGS = {
+    "Algeria": "🇩🇿",
+    "Argentina": "🇦🇷",
+    "Australia": "🇦🇺",
+    "Austria": "🇦🇹",
+    "Belgium": "🇧🇪",
+    "Bosnia and Herzegovina": "🇧🇦",
+    "Brazil": "🇧🇷",
+    "Canada": "🇨🇦",
+    "Cape Verde": "🇨🇻",
+    "Colombia": "🇨🇴",
+    "Croatia": "🇭🇷",
+    "Curaçao": "🇨🇼",
+    "Czech Republic": "🇨🇿",
+    "DR Congo": "🇨🇩",
+    "Ecuador": "🇪🇨",
+    "Egypt": "🇪🇬",
+    "England": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "France": "🇫🇷",
+    "Germany": "🇩🇪",
+    "Ghana": "🇬🇭",
+    "Haiti": "🇭🇹",
+    "Iran": "🇮🇷",
+    "Iraq": "🇮🇶",
+    "Ivory Coast": "🇨🇮",
+    "Japan": "🇯🇵",
+    "Jordan": "🇯🇴",
+    "Mexico": "🇲🇽",
+    "Morocco": "🇲🇦",
+    "Netherlands": "🇳🇱",
+    "New Zealand": "🇳🇿",
+    "Norway": "🇳🇴",
+    "Panama": "🇵🇦",
+    "Paraguay": "🇵🇾",
+    "Portugal": "🇵🇹",
+    "Qatar": "🇶🇦",
+    "Saudi Arabia": "🇸🇦",
+    "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "Senegal": "🇸🇳",
+    "South Africa": "🇿🇦",
+    "South Korea": "🇰🇷",
+    "Spain": "🇪🇸",
+    "Sweden": "🇸🇪",
+    "Switzerland": "🇨🇭",
+    "Tunisia": "🇹🇳",
+    "Turkey": "🇹🇷",
+    "United States": "🇺🇸",
+    "Uruguay": "🇺🇾",
+    "Uzbekistan": "🇺🇿",
+}
+
+
+def get_flag_emoji(country_name):
+    if not country_name:
+        return "⚽"
+    if (
+        country_name.startswith("Winner")
+        or country_name.startswith("Runner-up")
+        or country_name.startswith("3rd")
+        or country_name.startswith("Loser")
+    ):
+        return "⚽"
+    return COUNTRY_FLAGS.get(country_name, "⚽")
+
 
 def clean_filename(name):
     # Replace spaces with underscores and remove special characters
@@ -37,7 +101,9 @@ def generate_ics_content(matches, title_suffix):
         end_dt = start_dt + timedelta(hours=2)
         end_ics = end_dt.strftime("%Y%m%dT%H%M%SZ")
 
-        summary = f"{match['country_a']} vs {match['country_b']}"
+        flag_a = get_flag_emoji(match["country_a"])
+        flag_b = get_flag_emoji(match["country_b"])
+        summary = f"{flag_a} {match['country_a']} vs {flag_b} {match['country_b']}"
         location = match["location"]
 
         desc_parts = [f"FIFA World Cup 2026", f"Stage: {match['stage']}"]
@@ -46,7 +112,7 @@ def generate_ics_content(matches, title_suffix):
         desc_parts.append(f"Venue: {location}")
 
         description = "\\n".join(desc_parts)
-        uid = f"match_2026_{idx}_{clean_filename(match['country_a'])}_vs_{clean_filename(match['country_b'])}@worldcup2026.web.app"
+        uid = f"match_2026_{idx}_{clean_filename(match['country_a'])}_vs_{clean_filename(match['country_b'])}@worldcupcalendar.football"
 
         ics.extend(
             [

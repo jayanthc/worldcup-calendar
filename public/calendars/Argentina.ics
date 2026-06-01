@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Argentina Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Argentina_vs_Algeria@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Argentina_vs_Algeria@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260617T010000Z
 DTEND:20260617T030000Z
-SUMMARY:Argentina vs Algeria
+SUMMARY:🇦🇷 Argentina vs 🇩🇿 Algeria
 LOCATION:Arrowhead Stadium, Kansas City
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group J\nVenue: Arrowhead Stadium, Kansas City
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Argentina_vs_Austria@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Argentina_vs_Austria@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260622T170000Z
 DTEND:20260622T190000Z
-SUMMARY:Argentina vs Austria
+SUMMARY:🇦🇷 Argentina vs 🇦🇹 Austria
 LOCATION:AT&T Stadium, Arlington
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group J\nVenue: AT&T Stadium, Arlington
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Jordan_vs_Argentina@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Jordan_vs_Argentina@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260628T020000Z
 DTEND:20260628T040000Z
-SUMMARY:Jordan vs Argentina
+SUMMARY:🇯🇴 Jordan vs 🇦🇷 Argentina
 LOCATION:AT&T Stadium, Arlington
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group J\nVenue: AT&T Stadium, Arlington
 END:VEVENT

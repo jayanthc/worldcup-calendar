@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Sweden Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Sweden_vs_Tunisia@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Sweden_vs_Tunisia@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260615T020000Z
 DTEND:20260615T040000Z
-SUMMARY:Sweden vs Tunisia
+SUMMARY:🇸🇪 Sweden vs 🇹🇳 Tunisia
 LOCATION:Estadio BBVA, Guadalupe
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: Estadio BBVA, Guadalupe
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Netherlands_vs_Sweden@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Netherlands_vs_Sweden@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260620T170000Z
 DTEND:20260620T190000Z
-SUMMARY:Netherlands vs Sweden
+SUMMARY:🇳🇱 Netherlands vs 🇸🇪 Sweden
 LOCATION:NRG Stadium, Houston
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: NRG Stadium, Houston
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Japan_vs_Sweden@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Japan_vs_Sweden@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260625T230000Z
 DTEND:20260626T010000Z
-SUMMARY:Japan vs Sweden
+SUMMARY:🇯🇵 Japan vs 🇸🇪 Sweden
 LOCATION:AT&T Stadium, Arlington
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: AT&T Stadium, Arlington
 END:VEVENT

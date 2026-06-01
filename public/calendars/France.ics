@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - France Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_France_vs_Senegal@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_France_vs_Senegal@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260616T190000Z
 DTEND:20260616T210000Z
-SUMMARY:France vs Senegal
+SUMMARY:🇫🇷 France vs 🇸🇳 Senegal
 LOCATION:MetLife Stadium, East Rutherford
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: MetLife Stadium, East Rutherford
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_France_vs_Iraq@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_France_vs_Iraq@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260622T210000Z
 DTEND:20260622T230000Z
-SUMMARY:France vs Iraq
+SUMMARY:🇫🇷 France vs 🇮🇶 Iraq
 LOCATION:Lincoln Financial Field, Philadelphia
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: Lincoln Financial Field, Philadelphia
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Norway_vs_France@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Norway_vs_France@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260626T190000Z
 DTEND:20260626T210000Z
-SUMMARY:Norway vs France
+SUMMARY:🇳🇴 Norway vs 🇫🇷 France
 LOCATION:Gillette Stadium, Foxborough
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: Gillette Stadium, Foxborough
 END:VEVENT

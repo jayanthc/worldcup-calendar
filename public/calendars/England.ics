@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - England Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_England_vs_Croatia@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_England_vs_Croatia@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260617T200000Z
 DTEND:20260617T220000Z
-SUMMARY:England vs Croatia
+SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs 🇭🇷 Croatia
 LOCATION:AT&T Stadium, Arlington
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: AT&T Stadium, Arlington
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_England_vs_Ghana@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_England_vs_Ghana@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260623T200000Z
 DTEND:20260623T220000Z
-SUMMARY:England vs Ghana
+SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs 🇬🇭 Ghana
 LOCATION:Gillette Stadium, Foxborough
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: Gillette Stadium, Foxborough
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Panama_vs_England@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Panama_vs_England@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260627T210000Z
 DTEND:20260627T230000Z
-SUMMARY:Panama vs England
+SUMMARY:🇵🇦 Panama vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England
 LOCATION:MetLife Stadium, East Rutherford
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: MetLife Stadium, East Rutherford
 END:VEVENT

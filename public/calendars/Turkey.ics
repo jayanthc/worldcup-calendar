@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Turkey Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Australia_vs_Turkey@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Australia_vs_Turkey@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260614T040000Z
 DTEND:20260614T060000Z
-SUMMARY:Australia vs Turkey
+SUMMARY:🇦🇺 Australia vs 🇹🇷 Turkey
 LOCATION:BC Place, Vancouver
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: BC Place, Vancouver
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Turkey_vs_Paraguay@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Turkey_vs_Paraguay@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260620T030000Z
 DTEND:20260620T050000Z
-SUMMARY:Turkey vs Paraguay
+SUMMARY:🇹🇷 Turkey vs 🇵🇾 Paraguay
 LOCATION:Levi's Stadium, Santa Clara
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: Levi's Stadium, Santa Clara
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Turkey_vs_United_States@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Turkey_vs_United_States@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260626T020000Z
 DTEND:20260626T040000Z
-SUMMARY:Turkey vs United States
+SUMMARY:🇹🇷 Turkey vs 🇺🇸 United States
 LOCATION:SoFi Stadium, Inglewood
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: SoFi Stadium, Inglewood
 END:VEVENT

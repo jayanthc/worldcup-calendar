@@ -7,29 +7,29 @@ X-WR-CALNAME:FIFA World Cup 2026 - Uruguay Matches
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
-UID:match_2026_0_Saudi_Arabia_vs_Uruguay@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_0_Saudi_Arabia_vs_Uruguay@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260615T220000Z
 DTEND:20260616T000000Z
-SUMMARY:Saudi Arabia vs Uruguay
+SUMMARY:🇸🇦 Saudi Arabia vs 🇺🇾 Uruguay
 LOCATION:Hard Rock Stadium, Miami Gardens
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Hard Rock Stadium, Miami Gardens
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_1_Uruguay_vs_Cape_Verde@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_1_Uruguay_vs_Cape_Verde@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260621T220000Z
 DTEND:20260622T000000Z
-SUMMARY:Uruguay vs Cape Verde
+SUMMARY:🇺🇾 Uruguay vs 🇨🇻 Cape Verde
 LOCATION:Hard Rock Stadium, Miami Gardens
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Hard Rock Stadium, Miami Gardens
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_2_Uruguay_vs_Spain@worldcup2026.web.app
-DTSTAMP:20260601T035001Z
+UID:match_2026_2_Uruguay_vs_Spain@worldcupcalendar.football
+DTSTAMP:20260601T160909Z
 DTSTART:20260627T000000Z
 DTEND:20260627T020000Z
-SUMMARY:Uruguay vs Spain
+SUMMARY:🇺🇾 Uruguay vs 🇪🇸 Spain
 LOCATION:Estadio Akron, Zapopan
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Estadio Akron, Zapopan
 END:VEVENT
