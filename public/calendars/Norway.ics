@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Norway Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Iraq_vs_Norway@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260616T220000Z
+DTEND:20260617T000000Z
+SUMMARY:Iraq vs Norway
+LOCATION:Gillette Stadium, Foxborough
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: Gillette Stadium, Foxborough
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Norway_vs_Senegal@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260623T000000Z
+DTEND:20260623T020000Z
+SUMMARY:Norway vs Senegal
+LOCATION:MetLife Stadium, East Rutherford
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: MetLife Stadium, East Rutherford
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Norway_vs_France@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260626T190000Z
+DTEND:20260626T210000Z
+SUMMARY:Norway vs France
+LOCATION:Gillette Stadium, Foxborough
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: Gillette Stadium, Foxborough
+END:VEVENT
+END:VCALENDAR

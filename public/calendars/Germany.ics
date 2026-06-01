@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Germany Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Germany_vs_Curaao@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260614T170000Z
+DTEND:20260614T190000Z
+SUMMARY:Germany vs Curaçao
+LOCATION:NRG Stadium, Houston
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: NRG Stadium, Houston
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Germany_vs_Ivory_Coast@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260620T200000Z
+DTEND:20260620T220000Z
+SUMMARY:Germany vs Ivory Coast
+LOCATION:BMO Field, Toronto
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: BMO Field, Toronto
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Ecuador_vs_Germany@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260625T200000Z
+DTEND:20260625T220000Z
+SUMMARY:Ecuador vs Germany
+LOCATION:MetLife Stadium, East Rutherford
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: MetLife Stadium, East Rutherford
+END:VEVENT
+END:VCALENDAR

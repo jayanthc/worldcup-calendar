@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIFA World Cup 2026 Match Calendar | Download & Sync ICS</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Download the complete FIFA World Cup 2026 match schedule as an .ics calendar file. Filter by country, subscribe on Google Calendar, Apple Calendar, or Outlook, and never miss a match!">
+  <meta name="keywords" content="FIFA World Cup 2026, World Cup Calendar, World Cup 2026 ICS, Google Calendar World Cup, Download ICS World Cup, World Cup Fixtures, Soccer Calendar, Canada Mexico USA 2026">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FIFA World Cup 2026 Match Calendar | Download & Sync ICS">
+  <meta property="og:description" content="Download the complete FIFA World Cup 2026 match schedule as an .ics calendar file. Filter by country, subscribe on Google Calendar, Apple Calendar, or Outlook.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="FIFA World Cup 2026 Match Calendar | Download & Sync ICS">
+  <meta property="twitter:description" content="Download the complete FIFA World Cup 2026 match schedule as an .ics calendar file. Filter by country, subscribe on Google Calendar, Apple Calendar, or Outlook.">
+  
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Ambient Glow Effects -->
+  <div class="glow-bg">
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <i data-lucide="trophy"></i>
+        </div>
+        <div class="logo-text">
+          <h1>WORLD CUP 2026</h1>
+          <span class="logo-badge">MATCH CALENDAR</span>
+        </div>
+      </div>
+      
+      <!-- Live Countdown -->
+      <div class="countdown-panel" id="openingCountdown" title="Countdown to opening match: June 11, 2026">
+        <span class="countdown-label">KICKOFF IN</span>
+        <div class="countdown-timer">
+          <div class="time-block"><span id="days">--</span><span class="time-unit">d</span></div>
+          <div class="time-separator">:</div>
+          <div class="time-block"><span id="hours">--</span><span class="time-unit">h</span></div>
+          <div class="time-separator">:</div>
+          <div class="time-block"><span id="minutes">--</span><span class="time-unit">m</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <!-- Hero/CTA Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h2>Never Miss a Kick</h2>
+        <p class="hero-subtitle">
+          Download or subscribe to the complete <strong>FIFA World Cup 2026™</strong> match calendar. 
+          Custom-filtered for your favorite team, dynamically translated to your local timezone.
+        </p>
+        
+        <div class="host-nations">
+          <span class="host-badge"><img src="https://flagcdn.com/w40/ca.png" alt="Canada" class="host-flag"> Canada</span>
+          <span class="host-badge"><img src="https://flagcdn.com/w40/mx.png" alt="Mexico" class="host-flag"> Mexico</span>
+          <span class="host-badge"><img src="https://flagcdn.com/w40/us.png" alt="United States" class="host-flag"> United States</span>
+        </div>
+      </div>
+
+      <!-- Quick Sync Panel -->
+      <div class="sync-panel glass-card">
+        <div class="sync-info">
+          <h3>Dynamic Calendar Sync</h3>
+          <p id="syncDescription">All 104 matches, ready for your device</p>
+        </div>
+        <div class="sync-actions">
+          <button id="btnDownloadIcs" class="btn btn-primary" title="Download iCalendar .ics file">
+            <i data-lucide="download"></i>
+            <span>Download .ics File</span>
+          </button>
+          
+          <button id="btnGoogleCalendar" class="btn btn-secondary" title="Add calendar to Google Calendar without downloading">
+            <i data-lucide="calendar-plus"></i>
+            <span>Sync with Google Calendar</span>
+          </button>
+        </div>
+        <div class="sync-footer">
+          <span><i data-lucide="shield-check"></i> 100% Free & Safe</span>
+          <span><i data-lucide="refresh-cw"></i> Auto-updates (Subscribers)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters & Main Dashboard -->
+    <section class="dashboard-section">
+      
+      <!-- Control Panel -->
+      <div class="control-panel glass-card">
+        
+        <!-- Search & Country select -->
+        <div class="filter-row main-filters">
+          <div class="search-box">
+            <i data-lucide="search" class="input-icon"></i>
+            <input type="text" id="txtSearch" placeholder="Search team, stadium, or city...">
+            <button id="btnClearSearch" class="btn-clear" style="display: none;">&times;</button>
+          </div>
+          
+          <div class="select-wrapper">
+            <i data-lucide="flag" class="input-icon"></i>
+            <select id="selCountry">
+              <option value="ALL">Select Favorite Team (Show All)</option>
+              <!-- Populated by JavaScript -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Filter pills (Stage) -->
+        <div class="filter-row pills-row">
+          <span class="filter-label">Stage:</span>
+          <div class="pill-group" id="stageFilters">
+            <button class="pill active" data-stage="ALL">All Matches</button>
+            <button class="pill" data-stage="Group Stage">Group Stage</button>
+            <button class="pill" data-stage="Round of 32">Round of 32</button>
+            <button class="pill" data-stage="Round of 16">Round of 16</button>
+            <button class="pill" data-stage="Quarterfinal">Quarterfinals</button>
+            <button class="pill" data-stage="Semifinal">Semifinals</button>
+            <button class="pill" data-stage="Final">Finals</button>
+          </div>
+        </div>
+
+        <!-- Settings: Venue & Timezone -->
+        <div class="filter-row settings-row">
+          <div class="settings-group">
+            <div class="select-wrapper select-sm">
+              <i data-lucide="map-pin" class="input-icon"></i>
+              <select id="selVenue">
+                <option value="ALL">All Venues</option>
+                <!-- Populated by JavaScript -->
+              </select>
+            </div>
+
+            <div class="select-wrapper select-sm">
+              <i data-lucide="globe" class="input-icon"></i>
+              <select id="selGroup">
+                <option value="ALL">All Groups</option>
+                <option value="Group A">Group A</option>
+                <option value="Group B">Group B</option>
+                <option value="Group C">Group C</option>
+                <option value="Group D">Group D</option>
+                <option value="Group E">Group E</option>
+                <option value="Group F">Group F</option>
+                <option value="Group G">Group G</option>
+                <option value="Group H">Group H</option>
+                <option value="Group I">Group I</option>
+                <option value="Group J">Group J</option>
+                <option value="Group K">Group K</option>
+                <option value="Group L">Group L</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Timezone Switcher -->
+          <div class="timezone-switcher">
+            <span class="switcher-label"><i data-lucide="clock"></i> Timezone:</span>
+            <div class="toggle-group" id="timezoneToggle">
+              <button class="toggle-btn active" data-timezone="local" title="Show matches in your browser local time">Local Time</button>
+              <button class="toggle-btn" data-timezone="venue" title="Show matches in the local time of the host stadium">Stadium Time</button>
+              <button class="toggle-btn" data-timezone="utc" title="Show matches in Universal Coordinated Time">UTC</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Active Filter Stats / Info -->
+      <div class="stats-bar">
+        <div class="matches-count" id="matchesCount">
+          Loading tournament fixtures...
+        </div>
+        <div class="quick-links">
+          <button id="btnResetFilters" class="btn-link" style="display: none;">
+            <i data-lucide="rotate-ccw"></i> Reset Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Match Timeline Container -->
+      <div class="timeline-container" id="timelineContainer">
+        <!-- Loader Spinner -->
+        <div class="loader-container" id="mainLoader">
+          <div class="loader-spinner"></div>
+          <p>Assembling World Cup fixtures...</p>
+        </div>
+      </div>
+      
+    </section>
+  </main>
+
+  <!-- iCalendar Import Guide Modal -->
+  <div class="modal-overlay" id="importModal">
+    <div class="modal-card glass-card">
+      <div class="modal-header">
+        <div class="modal-title-area">
+          <i data-lucide="calendar" class="modal-icon"></i>
+          <h3>Google Calendar Sync Guide</h3>
+        </div>
+        <button class="btn-close" id="btnCloseModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">
+          You are about to subscribe to <strong id="modalCalendarName">All Matches</strong>. Subscribing keeps your calendar automatically updated in real-time if matches change.
+        </p>
+
+        <div class="modal-steps">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Direct Single-Click Sync</h4>
+              <p>Click the button below to instantly subscribe to this calendar directly in your Google Calendar account.</p>
+              <a href="#" id="modalDirectSyncLink" target="_blank" class="btn btn-primary btn-full">
+                <i data-lucide="calendar-plus"></i> Open Google Calendar
+              </a>
+            </div>
+          </div>
+
+          <div class="step-divider"><span>OR</span></div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Subscribe via Calendar URL</h4>
+              <p>If the button above does not open, copy the calendar subscription URL below and paste it in your calendar app (Settings > Add Calendar > From URL):</p>
+              <div class="copy-url-box">
+                <input type="text" id="txtIcsUrl" readonly value="https://worldcup2026.web.app/calendars/all.ics">
+                <button id="btnCopyUrl" class="btn-copy" title="Copy URL to clipboard">
+                  <i data-lucide="copy"></i> Copy
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-divider"><span>OR</span></div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Manual Upload (.ics)</h4>
+              <p>Download the customized <code>.ics</code> file to your computer, open Google Calendar, go to <strong>Settings > Import & Export</strong>, and upload the file.</p>
+              <button id="modalDownloadBtn" class="btn btn-secondary btn-full">
+                <i data-lucide="download"></i> Download ICS File
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <p>© 2026 FIFA World Cup Match Calendar Generator.</p>
+    <p class="footer-note">All dates and times are subject to change. This is an independent fan service. Trademarks and copyrights belong to their respective owners.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

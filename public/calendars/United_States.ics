@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - United States Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_United_States_vs_Paraguay@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260613T010000Z
+DTEND:20260613T030000Z
+SUMMARY:United States vs Paraguay
+LOCATION:SoFi Stadium, Inglewood
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: SoFi Stadium, Inglewood
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_United_States_vs_Australia@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260619T190000Z
+DTEND:20260619T210000Z
+SUMMARY:United States vs Australia
+LOCATION:Lumen Field, Seattle
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: Lumen Field, Seattle
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Turkey_vs_United_States@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260626T020000Z
+DTEND:20260626T040000Z
+SUMMARY:Turkey vs United States
+LOCATION:SoFi Stadium, Inglewood
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: SoFi Stadium, Inglewood
+END:VEVENT
+END:VCALENDAR

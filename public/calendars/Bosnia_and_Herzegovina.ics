@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Bosnia and Herzegovina Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Canada_vs_Bosnia_and_Herzegovina@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260612T190000Z
+DTEND:20260612T210000Z
+SUMMARY:Canada vs Bosnia and Herzegovina
+LOCATION:BMO Field, Toronto
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BMO Field, Toronto
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Switzerland_vs_Bosnia_and_Herzegovina@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260618T190000Z
+DTEND:20260618T210000Z
+SUMMARY:Switzerland vs Bosnia and Herzegovina
+LOCATION:SoFi Stadium, Inglewood
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: SoFi Stadium, Inglewood
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Bosnia_and_Herzegovina_vs_Qatar@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260624T190000Z
+DTEND:20260624T210000Z
+SUMMARY:Bosnia and Herzegovina vs Qatar
+LOCATION:Lumen Field, Seattle
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: Lumen Field, Seattle
+END:VEVENT
+END:VCALENDAR

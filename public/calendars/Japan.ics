@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Japan Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Netherlands_vs_Japan@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260614T200000Z
+DTEND:20260614T220000Z
+SUMMARY:Netherlands vs Japan
+LOCATION:AT&T Stadium, Arlington
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: AT&T Stadium, Arlington
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Tunisia_vs_Japan@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260621T040000Z
+DTEND:20260621T060000Z
+SUMMARY:Tunisia vs Japan
+LOCATION:Estadio BBVA, Guadalupe
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: Estadio BBVA, Guadalupe
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Japan_vs_Sweden@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260625T230000Z
+DTEND:20260626T010000Z
+SUMMARY:Japan vs Sweden
+LOCATION:AT&T Stadium, Arlington
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: AT&T Stadium, Arlington
+END:VEVENT
+END:VCALENDAR

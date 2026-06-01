@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Panama Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Ghana_vs_Panama@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260617T230000Z
+DTEND:20260618T010000Z
+SUMMARY:Ghana vs Panama
+LOCATION:BMO Field, Toronto
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: BMO Field, Toronto
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Panama_vs_Croatia@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260623T230000Z
+DTEND:20260624T010000Z
+SUMMARY:Panama vs Croatia
+LOCATION:BMO Field, Toronto
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: BMO Field, Toronto
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Panama_vs_England@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260627T210000Z
+DTEND:20260627T230000Z
+SUMMARY:Panama vs England
+LOCATION:MetLife Stadium, East Rutherford
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: MetLife Stadium, East Rutherford
+END:VEVENT
+END:VCALENDAR

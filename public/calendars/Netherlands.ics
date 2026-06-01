@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Netherlands Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Netherlands_vs_Japan@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260614T200000Z
+DTEND:20260614T220000Z
+SUMMARY:Netherlands vs Japan
+LOCATION:AT&T Stadium, Arlington
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: AT&T Stadium, Arlington
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Netherlands_vs_Sweden@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260620T170000Z
+DTEND:20260620T190000Z
+SUMMARY:Netherlands vs Sweden
+LOCATION:NRG Stadium, Houston
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: NRG Stadium, Houston
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Tunisia_vs_Netherlands@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260625T230000Z
+DTEND:20260626T010000Z
+SUMMARY:Tunisia vs Netherlands
+LOCATION:Arrowhead Stadium, Kansas City
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group F\nVenue: Arrowhead Stadium, Kansas City
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Ecuador Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Ivory_Coast_vs_Ecuador@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260614T230000Z
+DTEND:20260615T010000Z
+SUMMARY:Ivory Coast vs Ecuador
+LOCATION:Lincoln Financial Field, Philadelphia
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: Lincoln Financial Field, Philadelphia
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Ecuador_vs_Curaao@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260621T000000Z
+DTEND:20260621T020000Z
+SUMMARY:Ecuador vs Curaçao
+LOCATION:Arrowhead Stadium, Kansas City
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: Arrowhead Stadium, Kansas City
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Ecuador_vs_Germany@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260625T200000Z
+DTEND:20260625T220000Z
+SUMMARY:Ecuador vs Germany
+LOCATION:MetLife Stadium, East Rutherford
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: MetLife Stadium, East Rutherford
+END:VEVENT
+END:VCALENDAR

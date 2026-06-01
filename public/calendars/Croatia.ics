@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Croatia Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_England_vs_Croatia@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260617T200000Z
+DTEND:20260617T220000Z
+SUMMARY:England vs Croatia
+LOCATION:AT&T Stadium, Arlington
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: AT&T Stadium, Arlington
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Panama_vs_Croatia@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260623T230000Z
+DTEND:20260624T010000Z
+SUMMARY:Panama vs Croatia
+LOCATION:BMO Field, Toronto
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: BMO Field, Toronto
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Croatia_vs_Ghana@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260627T210000Z
+DTEND:20260627T230000Z
+SUMMARY:Croatia vs Ghana
+LOCATION:Lincoln Financial Field, Philadelphia
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: Lincoln Financial Field, Philadelphia
+END:VEVENT
+END:VCALENDAR

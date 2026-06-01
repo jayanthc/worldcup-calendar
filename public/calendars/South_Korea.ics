@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - South Korea Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_South_Korea_vs_Czech_Republic@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260612T020000Z
+DTEND:20260612T040000Z
+SUMMARY:South Korea vs Czech Republic
+LOCATION:Estadio Akron, Zapopan
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio Akron, Zapopan
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Mexico_vs_South_Korea@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260619T010000Z
+DTEND:20260619T030000Z
+SUMMARY:Mexico vs South Korea
+LOCATION:Estadio Akron, Zapopan
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio Akron, Zapopan
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_South_Africa_vs_South_Korea@worldcup2026.web.app
+DTSTAMP:20260601T035001Z
+DTSTART:20260625T010000Z
+DTEND:20260625T030000Z
+SUMMARY:South Africa vs South Korea
+LOCATION:Estadio BBVA, Guadalupe
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio BBVA, Guadalupe
+END:VEVENT
+END:VCALENDAR
