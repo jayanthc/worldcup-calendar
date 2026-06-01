@@ -403,7 +403,7 @@ function updateSyncDescription() {
   } else if (filteredMatches.length !== rawMatches.length) {
     descText = `<strong>${filteredMatches.length}</strong> selected matches based on your active filters`;
   } else {
-    descText = `All <strong>104</strong> matches, ready for your device`;
+    descText = `All <strong>104</strong> matches, or filter matches below`;
   }
 
   syncDesc.innerHTML = descText;
