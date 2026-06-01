@@ -30,6 +30,37 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <link rel="stylesheet" href="style.css?v=5">
+
+  <!-- Firebase App & Analytics SDKs (ES Modules CDN) -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+    // Firebase web app configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBtRcmPdRFLvddRGUCJ2aydfpMgaLtfE-w",
+      authDomain: "worldcup-calendar-b97f1.firebaseapp.com",
+      projectId: "worldcup-calendar-b97f1",
+      storageBucket: "worldcup-calendar-b97f1.firebasestorage.app",
+      messagingSenderId: "587427213462",
+      appId: "1:587427213462:web:cb00c452a4d5eed30792b7",
+      measurementId: "G-PM3JD4Q348"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    // Safe global tracking helper for non-module client scripts (like app.js)
+    window.logFirebaseEvent = function(eventName, eventParams = {}) {
+      try {
+        logEvent(analytics, eventName, eventParams);
+      } catch (e) {
+        console.warn("Analytics event tracking failed:", e);
+      }
+    };
+  </script>
 </head>
 <body>
 

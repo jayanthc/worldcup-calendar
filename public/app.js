@@ -740,6 +740,16 @@ function downloadFilteredMatchesIcs() {
 
   const content = generateICSContent(filteredMatches, suffix);
   triggerDownload(content, filename);
+
+  // Track Google Analytics event
+  if (typeof window.logFirebaseEvent === 'function') {
+    window.logFirebaseEvent('download_ics', {
+      calendar_type: suffix,
+      match_count: filteredMatches.length,
+      selected_teams_count: activeFilters.country.size,
+      selected_teams: Array.from(activeFilters.country).join(',') || 'All'
+    });
+  }
 }
 
 // 10. Event Handlers & Modal Interactions
@@ -797,6 +807,14 @@ function setupEventHandlers() {
     btn.classList.add("active");
 
     activeFilters.timezone = btn.dataset.timezone;
+
+    // Track Google Analytics event
+    if (typeof window.logFirebaseEvent === 'function') {
+      window.logFirebaseEvent('switch_timezone', {
+        timezone: activeFilters.timezone
+      });
+    }
+
     renderTimeline(); // No filtering changes needed, just a re-render
   });
 
@@ -1086,6 +1104,14 @@ function openGoogleCalendarModal() {
 
   let calendarTitle = "All Matches";
 
+  // Track Google Analytics event
+  if (typeof window.logFirebaseEvent === 'function') {
+    window.logFirebaseEvent('open_sync_modal', {
+      selected_teams_count: activeFilters.country.size,
+      selected_teams: Array.from(activeFilters.country).join(',') || 'All'
+    });
+  }
+
   if (activeFilters.country.size > 1) {
     // Multi-select subscription adapt
     modalCalendarName.textContent = `${activeFilters.country.size} Teams Selected`;
@@ -1135,6 +1161,14 @@ function openGoogleCalendarModal() {
 
     document.getElementById("btnCopyUrl").innerHTML = `<i data-lucide="check"></i> Copied!`;
     if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // Track Google Analytics event
+    if (typeof window.logFirebaseEvent === 'function') {
+      window.logFirebaseEvent('copy_ics_url', {
+        ics_url: txtIcsUrl.value,
+        team: activeFilters.country.size === 1 ? Array.from(activeFilters.country)[0] : 'All'
+      });
+    }
   });
 
   // Bind Download click inside modal
