@@ -95,9 +95,9 @@ firebase login
 ```
 
 ### 2. Connect Your Project
-We use the project target `worldcup-2026-calendar` (configured in `.firebaserc`). To confirm or select it, run:
+We use the project target `worldcup-calendar` (configured in `.firebaserc`). To confirm or select it, run:
 ```bash
-firebase use worldcup-2026-calendar
+firebase use worldcup-calendar
 ```
 
 ### 3. Deploy Static Assets
@@ -105,7 +105,7 @@ Run the deployment command to push your local `public/` folder, custom `.ics` mi
 ```bash
 firebase deploy --only hosting
 ```
-Once completed, Firebase will provide your live URL (e.g., `https://worldcup-2026-calendar.web.app`).
+Once completed, Firebase will provide your live URL (e.g., `https://worldcup-calendar.web.app`).
 
 ---
 
@@ -115,7 +115,7 @@ The application has been fully migrated to use the premium custom domain **`worl
 
 ### Connecting the Custom Domain in Firebase Console:
 1. Open the [Firebase Console](https://console.firebase.google.com/).
-2. Select your project **worldcup-2026-calendar**.
+2. Select your project **worldcup-calendar**.
 3. In the left navigation sidebar, go to **Build** > **Hosting**.
 4. Scroll down to the **Domains** section and click **Add Custom Domain**.
 5. Enter `worldcupcalendar.football` (and `www.worldcupcalendar.football` as desired).
