@@ -8,23 +8,23 @@
   --bg-glass-hover: rgba(14, 34, 27, 0.8);
   --border-glass: rgba(255, 255, 255, 0.08);
   --border-glass-focus: rgba(212, 175, 55, 0.3);
-  
+
   --accent-gold: #e5b83b;
   --accent-gold-hover: #f1cd64;
   --accent-gold-glow: rgba(229, 184, 59, 0.25);
-  
+
   --accent-green: #00d285;
   --accent-green-dark: #008f5a;
   --accent-green-glow: rgba(0, 210, 133, 0.2);
-  
+
   --text-primary: #ffffff;
   --text-secondary: #a3b3ac;
   --text-muted: #6b7e75;
-  
+
   /* Fonts */
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
+
   /* Radius & Shadows */
   --radius-lg: 20px;
   --radius-md: 14px;
@@ -32,7 +32,7 @@
   --shadow-main: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 20px rgba(0, 210, 133, 0.15);
   --shadow-gold-glow: 0 0 25px rgba(229, 184, 59, 0.2);
-  
+
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -764,7 +764,7 @@ body {
   max-height: 200px;
   overflow-y: auto;
   padding: 0.25rem 0;
-  
+
   --scrollbar-thumb: var(--accent-gold-glow);
   --scrollbar-track: rgba(0, 0, 0, 0.2);
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
@@ -1714,50 +1714,50 @@ body {
     gap: 2rem;
     text-align: center;
   }
-  
+
   .hero-subtitle {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .host-nations {
     justify-content: center;
   }
-  
+
   .sync-panel {
     max-width: 500px;
     margin: 0 auto;
     width: 100%;
   }
-  
+
   .bottom-sync-panel {
     flex-direction: column;
     text-align: center;
     gap: 1.25rem;
     padding: 1.5rem;
   }
-  
+
   .bottom-sync-actions {
     width: 100%;
     display: flex;
     gap: 0.75rem;
   }
-  
+
   .bottom-sync-actions .btn {
     flex-grow: 1;
     width: 100%;
   }
-  
+
   .main-filters {
     grid-template-columns: 1fr;
   }
-  
+
   .match-card {
     grid-template-columns: 1fr 1.5fr 1fr;
     gap: 1rem;
     padding: 1.25rem;
   }
-  
+
   .match-actions {
     grid-column: 1 / -1;
     flex-direction: row;
@@ -1766,7 +1766,7 @@ body {
     padding-top: 0.75rem;
     align-items: center;
   }
-  
+
   .btn-card {
     max-width: 100%;
     flex-grow: 1;
@@ -1778,72 +1778,72 @@ body {
     padding: 1rem;
     justify-content: center;
   }
-  
+
   .content-wrapper {
     margin: 1rem auto 3rem auto;
     padding: 0 1rem;
     gap: 1.5rem;
   }
-  
+
   .hero-content h2 {
     font-size: 2.25rem;
   }
-  
+
   .control-panel {
     padding: 1.25rem;
   }
-  
+
   .settings-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.25rem;
   }
-  
+
   .settings-group {
     width: 100%;
   }
-  
+
   .select-sm {
     width: 100%;
     flex-grow: 1;
   }
-  
+
   .timezone-switcher {
     width: 100%;
     justify-content: space-between;
   }
-  
+
   .match-card {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 0.75rem;
   }
-  
+
   .match-teams {
     border-left: none;
     border-right: none;
     padding: 0.5rem 0;
   }
-  
+
   .team-row {
     justify-content: center;
   }
-  
+
   .countdown-panel {
     display: none; /* Hide countdown on small headers to save space */
   }
-  
+
   .step-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  
+
   .copy-url-box {
     flex-direction: column;
     gap: 0.25rem;
   }
-  
+
   .btn-copy {
     width: 100%;
     justify-content: center;

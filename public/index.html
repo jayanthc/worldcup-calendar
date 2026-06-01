@@ -4,35 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FIFA World Cup 2026 Match Calendar | Download & Sync ICS</title>
-  
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="Download the complete FIFA World Cup 2026 match schedule as an .ics calendar file. Filter by country, subscribe on Google Calendar, Apple Calendar, or Outlook, and never miss a match!">
   <meta name="keywords" content="FIFA World Cup 2026, World Cup Calendar, World Cup 2026 ICS, Google Calendar World Cup, Download ICS World Cup, World Cup Fixtures, Soccer Calendar, Canada Mexico USA 2026">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="FIFA World Cup 2026 Match Calendar | Download & Sync ICS">
   <meta property="og:description" content="Download the complete FIFA World Cup 2026 match schedule as an .ics calendar file. Filter by country, subscribe on Google Calendar, Apple Calendar, or Outlook.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80">
-  
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="FIFA World Cup 2026 Match Calendar | Download & Sync ICS">
   <meta property="twitter:description" content="Download the complete FIFA World Cup 2026 match schedule as an .ics calendar file. Filter by country, subscribe on Google Calendar, Apple Calendar, or Outlook.">
-  
+
   <!-- Google Fonts & Lucide Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
+
   <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-  
+
   <!-- Ambient Glow Effects -->
   <div class="glow-bg">
     <div class="glow-sphere glow-1"></div>
@@ -51,7 +51,7 @@
           <span class="logo-badge">MATCH CALENDAR</span>
         </div>
       </div>
-      
+
       <!-- Live Countdown -->
       <div class="countdown-panel" id="openingCountdown" title="Countdown to opening match: June 11, 2026">
         <span class="countdown-label">KICKOFF IN</span>
@@ -74,10 +74,10 @@
       <div class="hero-content">
         <h2>Never Miss a Kick</h2>
         <p class="hero-subtitle">
-          Download or subscribe to the complete <strong>FIFA World Cup 2026™</strong> match calendar. 
+          Download or subscribe to the complete <strong>FIFA World Cup 2026™</strong> match calendar.
           Custom-filtered for your favourite team, dynamically translated to your local timezone.
         </p>
-        
+
         <div class="host-nations">
           <span class="host-badge"><img src="https://flagcdn.com/w40/ca.png" alt="Canada" class="host-flag"> Canada</span>
           <span class="host-badge"><img src="https://flagcdn.com/w40/mx.png" alt="Mexico" class="host-flag"> Mexico</span>
@@ -91,7 +91,7 @@
           <h3>Sync Tournament Calendar</h3>
           <p id="syncDescription">All 104 matches, ready for your device</p>
         </div>
-        
+
         <div class="sync-actions">
           <div class="sync-subscription-group">
             <button id="btnGoogleCalendar" class="btn btn-primary btn-green btn-full" title="Add calendar to Google Calendar without downloading">
@@ -102,7 +102,7 @@
               <i data-lucide="refresh-cw"></i> Live auto-updates on schedule changes
             </span>
           </div>
-          
+
           <button id="btnDownloadIcs" class="btn btn-primary btn-full" title="Download iCalendar .ics file">
             <i data-lucide="download"></i>
             <span>Download .ics File</span>
@@ -113,13 +113,13 @@
 
     <!-- Filters & Main Dashboard -->
     <section class="dashboard-section">
-      
+
       <!-- Control Panel -->
       <div class="control-panel glass-card">
-        
+
         <!-- Search & Country select -->
         <div class="filter-row main-filters">
-          
+
           <!-- Team select -->
           <div class="multiselect-container" id="multiSelectCountry">
             <div class="multiselect-trigger" id="countryTrigger" title="Click to filter by one or more teams">
@@ -242,7 +242,7 @@
           <p>Assembling World Cup fixtures...</p>
         </div>
       </div>
-      
+
       <!-- Bottom CTA Sync Panel -->
       <div class="bottom-sync-panel glass-card" id="bottomSyncPanel" style="display: none;">
         <div class="bottom-sync-info">
@@ -254,14 +254,14 @@
             <i data-lucide="calendar-plus"></i>
             <span>Sync Google Calendar</span>
           </button>
-          
+
           <button id="btnBottomDownloadIcs" class="btn btn-primary" title="Download iCalendar .ics file for selected matches">
             <i data-lucide="download"></i>
             <span>Download .ics</span>
           </button>
         </div>
       </div>
-      
+
     </section>
   </main>
 
