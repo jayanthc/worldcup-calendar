@@ -1799,7 +1799,8 @@ body {
     align-items: center;
   }
 
-  .btn-card {
+  .btn-card,
+  .btn-card-wrapper {
     max-width: 100%;
     flex-grow: 1;
   }
@@ -1840,7 +1841,8 @@ body {
     flex-grow: 1;
   }
 
-  .timezone-switcher {
+  .timezone-switcher,
+  .past-matches-switcher {
     width: 100%;
     justify-content: space-between;
   }
@@ -1849,6 +1851,14 @@ body {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 0.75rem;
+  }
+
+  .match-meta {
+    align-items: center;
+  }
+
+  .match-meta .status-badge {
+    align-self: center;
   }
 
   .match-teams {
@@ -1880,4 +1890,109 @@ body {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* Past Matches Switcher */
+.past-matches-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Match Meta Row for Badge alignment */
+.match-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Match Status Badges */
+.status-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.status-completed {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-live {
+  background: rgba(0, 210, 133, 0.15);
+  color: var(--accent-green);
+  border: 1px solid rgba(0, 210, 133, 0.3);
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-green);
+  border-radius: 50%;
+  display: inline-block;
+  animation: badge-pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes badge-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+}
+
+/* Completed & Live Match Cards styling */
+.match-card.completed-match {
+  opacity: 0.55;
+  filter: grayscale(40%);
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.match-card.completed-match:hover {
+  background: var(--bg-glass) !important;
+  transform: none !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.match-card.live-match {
+  border-color: rgba(0, 210, 133, 0.3) !important;
+  box-shadow: 0 0 15px rgba(0, 210, 133, 0.1);
+}
+
+.btn-card:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+  color: var(--text-muted) !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+/* Tooltip wrapper for disabled buttons */
+.btn-card-wrapper {
+  display: inline-flex;
+  width: 100%;
+  max-width: 160px;
 }

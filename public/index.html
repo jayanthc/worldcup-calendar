@@ -29,7 +29,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=7">
 
   <!-- Firebase App & Analytics SDKs (ES Modules CDN) -->
   <script type="module">
@@ -279,6 +279,15 @@
 
         <!-- Settings: Venue & Timezone -->
         <div class="filter-row settings-row">
+          <!-- Past Matches Switcher -->
+          <div class="past-matches-switcher">
+            <span class="switcher-label"><i data-lucide="history"></i> Past Matches:</span>
+            <div class="toggle-group" id="pastMatchesToggle">
+              <button class="toggle-btn" data-show-past="true" title="Show past matches in the timeline">Show</button>
+              <button class="toggle-btn active" data-show-past="false" title="Hide past matches from the timeline (default)">Hide</button>
+            </div>
+          </div>
+
           <!-- Timezone Switcher -->
           <div class="timezone-switcher">
             <span class="switcher-label"><i data-lucide="clock"></i> Timezone:</span>
@@ -408,6 +417,6 @@
     <p class="footer-note">All dates and times are subject to change. This is an independent fan service. Trademarks and copyrights belong to their respective owners.</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

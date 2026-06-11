@@ -9,7 +9,8 @@ let activeFilters = {
   stage: 'ALL',
   venue: new Set(),   // Set of selected city names (empty means All Cities)
   hostCountry: new Set(), // Set of selected host countries (empty means All Host Countries)
-  timezone: 'local'   // 'local', 'venue', 'utc'
+  timezone: 'local',   // 'local', 'venue', 'utc'
+  showPast: false
 };
 
 // Target Date for Opening Match: June 11, 2026 at 19:00:00 UTC
@@ -416,10 +417,33 @@ function updateStatsBar() {
   const total = rawMatches.length;
   const filtered = filteredMatches.length;
 
+  // Calculate completed matches to determine visible counts
+  const now = new Date();
+  const completedCount = filteredMatches.filter(match => {
+    const matchTime = new Date(match.time);
+    return now > new Date(matchTime.getTime() + 2 * 60 * 60 * 1000); // 2 hours after kickoff
+  }).length;
+
+  const totalCompletedCount = rawMatches.filter(match => {
+    const matchTime = new Date(match.time);
+    return now > new Date(matchTime.getTime() + 2 * 60 * 60 * 1000); // 2 hours after kickoff
+  }).length;
+
+  const visibleFiltered = activeFilters.showPast ? filtered : (filtered - completedCount);
+  const visibleTotal = activeFilters.showPast ? total : (total - totalCompletedCount);
+
   if (filtered === total) {
-    countEl.innerHTML = `Showing all <strong>${total}</strong> fixtures`;
+    if (activeFilters.showPast) {
+      countEl.innerHTML = `Showing all <strong>${total}</strong> fixtures`;
+    } else {
+      countEl.innerHTML = `Showing all <strong>${visibleFiltered}</strong> upcoming fixtures`;
+    }
   } else {
-    countEl.innerHTML = `Showing <strong>${filtered}</strong> of <strong>${total}</strong> matches`;
+    if (activeFilters.showPast) {
+      countEl.innerHTML = `Showing <strong>${filtered}</strong> of <strong>${total}</strong> matches`;
+    } else {
+      countEl.innerHTML = `Showing <strong>${visibleFiltered}</strong> of <strong>${visibleTotal}</strong> upcoming matches`;
+    }
   }
 
   // Show reset button if filters are active
@@ -493,6 +517,9 @@ function renderTimeline() {
     return new Date(groups[a][0].time) - new Date(groups[b][0].time);
   });
 
+  let totalVisibleMatches = 0;
+  const fragment = document.createDocumentFragment();
+
   sortedDates.forEach(dateStr => {
     const dateGroup = document.createElement("div");
     dateGroup.className = "timeline-date-group";
@@ -503,14 +530,57 @@ function renderTimeline() {
     const matchesList = document.createElement("div");
     matchesList.className = "matches-list";
 
+    let visibleMatchesInGroup = 0;
+
     groups[dateStr].forEach(match => {
+      const matchTime = new Date(match.time);
+      const now = new Date();
+      const isCompleted = now > new Date(matchTime.getTime() + 2 * 60 * 60 * 1000); // 2 hours after kickoff
+
+      if (isCompleted && !activeFilters.showPast) {
+        return; // skip completed matches if showPast is false
+      }
+
+      visibleMatchesInGroup++;
+      totalVisibleMatches++;
       const matchCard = createMatchCard(match);
       matchesList.appendChild(matchCard);
     });
 
-    dateGroup.appendChild(matchesList);
-    container.appendChild(dateGroup);
+    if (visibleMatchesInGroup > 0) {
+      dateGroup.appendChild(matchesList);
+      fragment.appendChild(dateGroup);
+    }
   });
+
+  if (totalVisibleMatches === 0) {
+    container.innerHTML = `
+      <div class="empty-state glass-card">
+        <div class="empty-icon"><i data-lucide="history"></i></div>
+        <h3>No upcoming matches found</h3>
+        <p>All matches matching your filter have already completed. Enable "Show" under Past Matches to view them.</p>
+        <button id="btnEnablePastMatches" class="btn btn-secondary">
+          <i data-lucide="eye"></i> Show Past Matches
+        </button>
+      </div>
+    `;
+    document.getElementById("btnEnablePastMatches").addEventListener("click", () => {
+      const pastMatchesToggle = document.getElementById("pastMatchesToggle");
+      if (pastMatchesToggle) {
+        pastMatchesToggle.querySelectorAll(".toggle-btn").forEach(b => b.classList.remove("active"));
+        const showBtn = pastMatchesToggle.querySelector("[data-show-past='true']");
+        if (showBtn) showBtn.classList.add("active");
+      }
+      activeFilters.showPast = true;
+      applyFilters();
+    });
+    const bottomPanel = document.getElementById("bottomSyncPanel");
+    if (bottomPanel) bottomPanel.style.display = "none";
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    return;
+  }
+
+  container.appendChild(fragment);
 
   const bottomPanel = document.getElementById("bottomSyncPanel");
   if (bottomPanel) bottomPanel.style.display = "flex";
@@ -525,6 +595,17 @@ function createMatchCard(match) {
   const card = document.createElement("article");
   card.className = "match-card glass-card";
 
+  const matchTime = new Date(match.time);
+  const now = new Date();
+  const isCompleted = now > new Date(matchTime.getTime() + 2 * 60 * 60 * 1000); // 2 hours after kickoff
+  const isLive = now >= matchTime && !isCompleted;
+
+  if (isCompleted) {
+    card.classList.add("completed-match");
+  } else if (isLive) {
+    card.classList.add("live-match");
+  }
+
   const isFavCountryA = activeFilters.country.size > 0 && activeFilters.country.has(match.country_a);
   const isFavCountryB = activeFilters.country.size > 0 && activeFilters.country.has(match.country_b);
 
@@ -538,10 +619,18 @@ function createMatchCard(match) {
   // Google Calendar URL for individual match add
   const gcalUrl = getIndividualGoogleCalendarUrl(match);
 
+  let statusBadgeHtml = '';
+  if (isCompleted) {
+    statusBadgeHtml = `<span class="status-badge status-completed">COMPLETED</span>`;
+  } else if (isLive) {
+    statusBadgeHtml = `<span class="status-badge status-live"><span class="pulse-dot"></span>LIVE</span>`;
+  }
+
   card.innerHTML = `
     <div class="match-meta">
       <span class="match-stage">${match.stage}</span>
-      <span class="match-group-name">${match.group || ''}</span>
+      ${match.group ? `<span class="match-group-name">${match.group}</span>` : ''}
+      ${statusBadgeHtml}
     </div>
 
     <div class="match-teams">
@@ -558,21 +647,39 @@ function createMatchCard(match) {
     </div>
 
     <div class="match-actions">
-      <a href="${gcalUrl}" target="_blank" class="btn-card btn-card-green" title="Add this match to your Google Calendar">
-        <i data-lucide="calendar-plus"></i>
-        <span>+ Google Calendar</span>
-      </a>
-      <button class="btn-card btn-card-primary btn-download-match" title="Download ICS for this match">
-        <i data-lucide="download"></i>
-        <span>Download ICS</span>
-      </button>
+      ${isCompleted ? `
+        <span class="btn-card-wrapper" title="Adding to Google Calendar is disabled for completed matches">
+          <button class="btn-card btn-card-green" disabled>
+            <i data-lucide="calendar-plus"></i>
+            <span>+ Google Calendar</span>
+          </button>
+        </span>
+        <span class="btn-card-wrapper" title="Downloading ICS is disabled for completed matches">
+          <button class="btn-card btn-card-primary" disabled>
+            <i data-lucide="download"></i>
+            <span>Download ICS</span>
+          </button>
+        </span>
+      ` : `
+        <a href="${gcalUrl}" target="_blank" class="btn-card btn-card-green" title="Add this match to your Google Calendar">
+          <i data-lucide="calendar-plus"></i>
+          <span>+ Google Calendar</span>
+        </a>
+        <button class="btn-card btn-card-primary btn-download-match" title="Download ICS for this match">
+          <i data-lucide="download"></i>
+          <span>Download ICS</span>
+        </button>
+      `}
     </div>
   `;
 
   // Bind Download ICS for this match card
-  card.querySelector(".btn-download-match").addEventListener("click", () => {
-    downloadSingleMatchIcs(match);
-  });
+  const downloadBtn = card.querySelector(".btn-download-match");
+  if (downloadBtn) {
+    downloadBtn.addEventListener("click", () => {
+      downloadSingleMatchIcs(match);
+    });
+  }
 
   return card;
 }
@@ -840,6 +947,29 @@ function setupEventHandlers() {
     activeFilters.stage = pill.dataset.stage;
     applyFilters();
   });
+
+  // Past Matches Switcher Toggle
+  const pastMatchesToggle = document.getElementById("pastMatchesToggle");
+  if (pastMatchesToggle) {
+    pastMatchesToggle.addEventListener("click", (e) => {
+      const btn = e.target.closest(".toggle-btn");
+      if (!btn) return;
+
+      pastMatchesToggle.querySelectorAll(".toggle-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      activeFilters.showPast = btn.dataset.showPast === "true";
+
+      // Track Google Analytics event
+      if (typeof window.logFirebaseEvent === 'function') {
+        window.logFirebaseEvent('switch_show_past', {
+          show_past: activeFilters.showPast
+        });
+      }
+
+      applyFilters();
+    });
+  }
 
   // Timezone Switcher Toggle
   timezoneToggle.addEventListener("click", (e) => {
