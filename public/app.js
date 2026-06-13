@@ -183,6 +183,7 @@ async function fetchScheduleData() {
 
     const csvText = await response.text();
     rawMatches = parseCSV(csvText);
+    rawMatches.sort((a, b) => new Date(a.time) - new Date(b.time));
     filteredMatches = [...rawMatches];
 
     // Hide loader and render dashboard options
