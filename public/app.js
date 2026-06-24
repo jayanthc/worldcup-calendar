@@ -178,11 +178,34 @@ function startCountdownTicker() {
 async function fetchScheduleData() {
   const loader = document.getElementById("mainLoader");
   try {
+    let knockoutMappings = {};
+    try {
+      const mappingsResponse = await fetch("knockout_mappings.json");
+      if (mappingsResponse.ok) {
+        knockoutMappings = await mappingsResponse.json();
+      }
+    } catch (e) {
+      console.warn("Could not load knockout mappings:", e);
+    }
+
     const response = await fetch("worldcup_2026_schedule.csv");
     if (!response.ok) throw new Error("Could not load CSV schedule data.");
 
     const csvText = await response.text();
-    rawMatches = parseCSV(csvText);
+    const parsedMatches = parseCSV(csvText);
+
+    rawMatches = parsedMatches.map(match => {
+      const original_country_a = match.country_a;
+      const original_country_b = match.country_b;
+      return {
+        ...match,
+        original_country_a,
+        original_country_b,
+        country_a: knockoutMappings[original_country_a] || original_country_a,
+        country_b: knockoutMappings[original_country_b] || original_country_b
+      };
+    });
+
     rawMatches.sort((a, b) => new Date(a.time) - new Date(b.time));
     filteredMatches = [...rawMatches];
 
@@ -811,8 +834,10 @@ function generateICSContent(matchesList, titleSuffix) {
     const dtStart = formatICSDate(startDate);
     const dtEnd = formatICSDate(endDate);
 
-    const cleanTeamA = match.country_a.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
-    const cleanTeamB = match.country_b.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
+    const teamA = match.original_country_a || match.country_a;
+    const teamB = match.original_country_b || match.country_b;
+    const cleanTeamA = teamA.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
+    const cleanTeamB = teamB.replace(/[^a-zA-Z0-9\s-]/g, '').trim().replace(/\s+/g, '_');
     const uid = `match_2026_${index}_${cleanTeamA}_vs_${cleanTeamB}_client@worldcupcalendar.football`;
 
     const flagA = getFlagEmoji(match.country_a);
