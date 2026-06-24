@@ -1,36 +1,45 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//FIFA World Cup 2026 Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:FIFA World Cup 2026 - Switzerland Matches
-X-WR-TIMEZONE:UTC
-X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
-BEGIN:VEVENT
-UID:match_2026_0_Qatar_vs_Switzerland@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260613T190000Z
-DTEND:20260613T210000Z
-SUMMARY:🇶🇦 Qatar vs 🇨🇭 Switzerland
-LOCATION:Levi's Stadium, Santa Clara
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: Levi's Stadium, Santa Clara
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_1_Switzerland_vs_Bosnia_and_Herzegovina@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260618T190000Z
-DTEND:20260618T210000Z
-SUMMARY:🇨🇭 Switzerland vs 🇧🇦 Bosnia and Herzegovina
-LOCATION:SoFi Stadium, Inglewood
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: SoFi Stadium, Inglewood
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_2_Switzerland_vs_Canada@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260624T190000Z
-DTEND:20260624T210000Z
-SUMMARY:🇨🇭 Switzerland vs 🇨🇦 Canada
-LOCATION:BC Place, Vancouver
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BC Place, Vancouver
-END:VEVENT
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Switzerland Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Qatar_vs_Switzerland@worldcupcalendar.football
+DTSTAMP:20260624T220918Z
+DTSTART:20260613T190000Z
+DTEND:20260613T210000Z
+SUMMARY:🇶🇦 Qatar vs 🇨🇭 Switzerland
+LOCATION:Levi's Stadium, Santa Clara
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: Levi's Stadium, Santa Clara
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Switzerland_vs_Bosnia_and_Herzegovina@worldcupcalendar.football
+DTSTAMP:20260624T220918Z
+DTSTART:20260618T190000Z
+DTEND:20260618T210000Z
+SUMMARY:🇨🇭 Switzerland vs 🇧🇦 Bosnia and Herzegovina
+LOCATION:SoFi Stadium, Inglewood
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: SoFi Stadium, Inglewood
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Switzerland_vs_Canada@worldcupcalendar.football
+DTSTAMP:20260624T220918Z
+DTSTART:20260624T190000Z
+DTEND:20260624T210000Z
+SUMMARY:🇨🇭 Switzerland vs 🇨🇦 Canada
+LOCATION:BC Place, Vancouver
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BC Place, Vancouver
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_3_Winner_Group_B_vs_3rd_Group_EFGIJ@worldcupcalendar.football
+DTSTAMP:20260624T220918Z
+DTSTART:20260703T030000Z
+DTEND:20260703T050000Z
+SUMMARY:🇨🇭 Switzerland vs ⚽ 3rd Group E/F/G/I/J
+LOCATION:BC Place, Vancouver
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: BC Place, Vancouver
+END:VEVENT
 END:VCALENDAR
