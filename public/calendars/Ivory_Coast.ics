@@ -1,36 +1,45 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//FIFA World Cup 2026 Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:FIFA World Cup 2026 - Ivory Coast Matches
-X-WR-TIMEZONE:UTC
-X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
-BEGIN:VEVENT
-UID:match_2026_0_Ivory_Coast_vs_Ecuador@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260614T230000Z
-DTEND:20260615T010000Z
-SUMMARY:🇨🇮 Ivory Coast vs 🇪🇨 Ecuador
-LOCATION:Lincoln Financial Field, Philadelphia
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: Lincoln Financial Field, Philadelphia
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_1_Germany_vs_Ivory_Coast@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260620T200000Z
-DTEND:20260620T220000Z
-SUMMARY:🇩🇪 Germany vs 🇨🇮 Ivory Coast
-LOCATION:BMO Field, Toronto
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: BMO Field, Toronto
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_2_Curaao_vs_Ivory_Coast@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260625T200000Z
-DTEND:20260625T220000Z
-SUMMARY:🇨🇼 Curaçao vs 🇨🇮 Ivory Coast
-LOCATION:Lincoln Financial Field, Philadelphia
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: Lincoln Financial Field, Philadelphia
-END:VEVENT
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Ivory Coast Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Ivory_Coast_vs_Ecuador@worldcupcalendar.football
+DTSTAMP:20260625T220226Z
+DTSTART:20260614T230000Z
+DTEND:20260615T010000Z
+SUMMARY:🇨🇮 Ivory Coast vs 🇪🇨 Ecuador
+LOCATION:Lincoln Financial Field, Philadelphia
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: Lincoln Financial Field, Philadelphia
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Germany_vs_Ivory_Coast@worldcupcalendar.football
+DTSTAMP:20260625T220226Z
+DTSTART:20260620T200000Z
+DTEND:20260620T220000Z
+SUMMARY:🇩🇪 Germany vs 🇨🇮 Ivory Coast
+LOCATION:BMO Field, Toronto
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: BMO Field, Toronto
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Curaao_vs_Ivory_Coast@worldcupcalendar.football
+DTSTAMP:20260625T220226Z
+DTSTART:20260625T200000Z
+DTEND:20260625T220000Z
+SUMMARY:🇨🇼 Curaçao vs 🇨🇮 Ivory Coast
+LOCATION:Lincoln Financial Field, Philadelphia
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: Lincoln Financial Field, Philadelphia
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_3_Runner-up_Group_E_vs_Runner-up_Group_I@worldcupcalendar.football
+DTSTAMP:20260625T220226Z
+DTSTART:20260630T170000Z
+DTEND:20260630T190000Z
+SUMMARY:🇨🇮 Ivory Coast vs ⚽ Runner-up Group I
+LOCATION:AT&T Stadium, Arlington
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: AT&T Stadium, Arlington
+END:VEVENT
 END:VCALENDAR
