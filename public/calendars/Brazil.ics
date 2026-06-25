@@ -1,36 +1,45 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//FIFA World Cup 2026 Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:FIFA World Cup 2026 - Brazil Matches
-X-WR-TIMEZONE:UTC
-X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
-BEGIN:VEVENT
-UID:match_2026_0_Brazil_vs_Morocco@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260613T220000Z
-DTEND:20260614T000000Z
-SUMMARY:🇧🇷 Brazil vs 🇲🇦 Morocco
-LOCATION:MetLife Stadium, East Rutherford
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: MetLife Stadium, East Rutherford
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_1_Brazil_vs_Haiti@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260620T003000Z
-DTEND:20260620T023000Z
-SUMMARY:🇧🇷 Brazil vs 🇭🇹 Haiti
-LOCATION:Lincoln Financial Field, Philadelphia
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: Lincoln Financial Field, Philadelphia
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_2_Scotland_vs_Brazil@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260624T220000Z
-DTEND:20260625T000000Z
-SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland vs 🇧🇷 Brazil
-LOCATION:Hard Rock Stadium, Miami Gardens
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: Hard Rock Stadium, Miami Gardens
-END:VEVENT
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Brazil Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Brazil_vs_Morocco@worldcupcalendar.football
+DTSTAMP:20260625T002308Z
+DTSTART:20260613T220000Z
+DTEND:20260614T000000Z
+SUMMARY:🇧🇷 Brazil vs 🇲🇦 Morocco
+LOCATION:MetLife Stadium, East Rutherford
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: MetLife Stadium, East Rutherford
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Brazil_vs_Haiti@worldcupcalendar.football
+DTSTAMP:20260625T002308Z
+DTSTART:20260620T003000Z
+DTEND:20260620T023000Z
+SUMMARY:🇧🇷 Brazil vs 🇭🇹 Haiti
+LOCATION:Lincoln Financial Field, Philadelphia
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: Lincoln Financial Field, Philadelphia
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Scotland_vs_Brazil@worldcupcalendar.football
+DTSTAMP:20260625T002308Z
+DTSTART:20260624T220000Z
+DTEND:20260625T000000Z
+SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland vs 🇧🇷 Brazil
+LOCATION:Hard Rock Stadium, Miami Gardens
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: Hard Rock Stadium, Miami Gardens
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_3_Winner_Group_C_vs_Runner-up_Group_F@worldcupcalendar.football
+DTSTAMP:20260625T002308Z
+DTSTART:20260629T170000Z
+DTEND:20260629T190000Z
+SUMMARY:🇧🇷 Brazil vs ⚽ Runner-up Group F
+LOCATION:NRG Stadium, Houston
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: NRG Stadium, Houston
+END:VEVENT
 END:VCALENDAR
