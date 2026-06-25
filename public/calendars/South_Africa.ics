@@ -1,36 +1,45 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//FIFA World Cup 2026 Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:FIFA World Cup 2026 - South Africa Matches
-X-WR-TIMEZONE:UTC
-X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
-BEGIN:VEVENT
-UID:match_2026_0_Mexico_vs_South_Africa@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260611T190000Z
-DTEND:20260611T210000Z
-SUMMARY:🇲🇽 Mexico vs 🇿🇦 South Africa
-LOCATION:Estadio Azteca, Mexico City
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio Azteca, Mexico City
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_1_Czech_Republic_vs_South_Africa@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260618T160000Z
-DTEND:20260618T180000Z
-SUMMARY:🇨🇿 Czech Republic vs 🇿🇦 South Africa
-LOCATION:Mercedes-Benz Stadium, Atlanta
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Mercedes-Benz Stadium, Atlanta
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_2_South_Africa_vs_South_Korea@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260625T010000Z
-DTEND:20260625T030000Z
-SUMMARY:🇿🇦 South Africa vs 🇰🇷 South Korea
-LOCATION:Estadio BBVA, Guadalupe
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio BBVA, Guadalupe
-END:VEVENT
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - South Africa Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Mexico_vs_South_Africa@worldcupcalendar.football
+DTSTAMP:20260625T030032Z
+DTSTART:20260611T190000Z
+DTEND:20260611T210000Z
+SUMMARY:🇲🇽 Mexico vs 🇿🇦 South Africa
+LOCATION:Estadio Azteca, Mexico City
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio Azteca, Mexico City
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Czech_Republic_vs_South_Africa@worldcupcalendar.football
+DTSTAMP:20260625T030032Z
+DTSTART:20260618T160000Z
+DTEND:20260618T180000Z
+SUMMARY:🇨🇿 Czech Republic vs 🇿🇦 South Africa
+LOCATION:Mercedes-Benz Stadium, Atlanta
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Mercedes-Benz Stadium, Atlanta
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_South_Africa_vs_South_Korea@worldcupcalendar.football
+DTSTAMP:20260625T030032Z
+DTSTART:20260625T010000Z
+DTEND:20260625T030000Z
+SUMMARY:🇿🇦 South Africa vs 🇰🇷 South Korea
+LOCATION:Estadio BBVA, Guadalupe
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Estadio BBVA, Guadalupe
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_3_Runner-up_Group_A_vs_Runner-up_Group_B@worldcupcalendar.football
+DTSTAMP:20260625T030032Z
+DTSTART:20260628T190000Z
+DTEND:20260628T210000Z
+SUMMARY:🇿🇦 South Africa vs 🇨🇦 Canada
+LOCATION:SoFi Stadium, Inglewood
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: SoFi Stadium, Inglewood
+END:VEVENT
 END:VCALENDAR
