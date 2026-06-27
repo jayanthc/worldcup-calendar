@@ -10,6 +10,7 @@
     "Runner-up Group D": "Australia",
     "3rd Group A/B/C/D/F": "Paraguay",
     "Winner Group E": "Germany",
+    "3rd Group C/E/F/H/I": "Ecuador",
     "Runner-up Group E": "Ivory Coast",
     "Winner Group F": "Netherlands",
     "Runner-up Group F": "Japan",
@@ -19,5 +20,8 @@
     "Winner Group H": "Spain",
     "Runner-up Group H": "Cape Verde",
     "Winner Group I": "France",
-    "Runner-up Group I": "Norway"
+    "Runner-up Group I": "Norway",
+    "Winner Group L": "England",
+    "Runner-up Group L": "Croatia",
+    "3rd Group D/E/I/J/L": "Ghana"
 }

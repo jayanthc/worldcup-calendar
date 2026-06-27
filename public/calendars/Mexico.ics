@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_Mexico_vs_South_Africa@worldcupcalendar.football
-DTSTAMP:20260625T030032Z
+DTSTAMP:20260627T230457Z
 DTSTART:20260611T190000Z
 DTEND:20260611T210000Z
 SUMMARY:🇲🇽 Mexico vs 🇿🇦 South Africa
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Esta
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_Mexico_vs_South_Korea@worldcupcalendar.football
-DTSTAMP:20260625T030032Z
+DTSTAMP:20260627T230457Z
 DTSTART:20260619T010000Z
 DTEND:20260619T030000Z
 SUMMARY:🇲🇽 Mexico vs 🇰🇷 South Korea
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Esta
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Czech_Republic_vs_Mexico@worldcupcalendar.football
-DTSTAMP:20260625T030032Z
+DTSTAMP:20260627T230457Z
 DTSTART:20260625T010000Z
 DTEND:20260625T030000Z
 SUMMARY:🇨🇿 Czech Republic vs 🇲🇽 Mexico
@@ -35,10 +35,10 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group A\nVenue: Esta
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_3_Winner_Group_A_vs_3rd_Group_CEFHI@worldcupcalendar.football
-DTSTAMP:20260625T030032Z
+DTSTAMP:20260627T230457Z
 DTSTART:20260701T010000Z
 DTEND:20260701T030000Z
-SUMMARY:🇲🇽 Mexico vs ⚽ 3rd Group C/E/F/H/I
+SUMMARY:🇲🇽 Mexico vs 🇪🇨 Ecuador
 LOCATION:Estadio Azteca, Mexico City
 DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Estadio Azteca, Mexico City
 END:VEVENT
