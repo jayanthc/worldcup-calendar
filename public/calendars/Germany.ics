@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_Germany_vs_Curaao@worldcupcalendar.football
-DTSTAMP:20260625T220226Z
+DTSTAMP:20260627T141450Z
 DTSTART:20260614T170000Z
 DTEND:20260614T190000Z
 SUMMARY:🇩🇪 Germany vs 🇨🇼 Curaçao
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: NRG 
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_Germany_vs_Ivory_Coast@worldcupcalendar.football
-DTSTAMP:20260625T220226Z
+DTSTAMP:20260627T141450Z
 DTSTART:20260620T200000Z
 DTEND:20260620T220000Z
 SUMMARY:🇩🇪 Germany vs 🇨🇮 Ivory Coast
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: BMO 
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Ecuador_vs_Germany@worldcupcalendar.football
-DTSTAMP:20260625T220226Z
+DTSTAMP:20260627T141450Z
 DTSTART:20260625T200000Z
 DTEND:20260625T220000Z
 SUMMARY:🇪🇨 Ecuador vs 🇩🇪 Germany
@@ -35,10 +35,10 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group E\nVenue: MetL
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_3_Winner_Group_E_vs_3rd_Group_ABCDF@worldcupcalendar.football
-DTSTAMP:20260625T220226Z
+DTSTAMP:20260627T141450Z
 DTSTART:20260629T203000Z
 DTEND:20260629T223000Z
-SUMMARY:🇩🇪 Germany vs ⚽ 3rd Group A/B/C/D/F
+SUMMARY:🇩🇪 Germany vs 🇵🇾 Paraguay
 LOCATION:Gillette Stadium, Foxborough
 DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Gillette Stadium, Foxborough
 END:VEVENT
