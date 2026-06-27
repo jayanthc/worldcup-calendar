@@ -1,36 +1,45 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//FIFA World Cup 2026 Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:FIFA World Cup 2026 - Cape Verde Matches
-X-WR-TIMEZONE:UTC
-X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
-BEGIN:VEVENT
-UID:match_2026_0_Spain_vs_Cape_Verde@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260615T160000Z
-DTEND:20260615T180000Z
-SUMMARY:🇪🇸 Spain vs 🇨🇻 Cape Verde
-LOCATION:Mercedes-Benz Stadium, Atlanta
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Mercedes-Benz Stadium, Atlanta
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_1_Uruguay_vs_Cape_Verde@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260621T220000Z
-DTEND:20260622T000000Z
-SUMMARY:🇺🇾 Uruguay vs 🇨🇻 Cape Verde
-LOCATION:Hard Rock Stadium, Miami Gardens
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Hard Rock Stadium, Miami Gardens
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_2_Cape_Verde_vs_Saudi_Arabia@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260627T000000Z
-DTEND:20260627T020000Z
-SUMMARY:🇨🇻 Cape Verde vs 🇸🇦 Saudi Arabia
-LOCATION:NRG Stadium, Houston
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: NRG Stadium, Houston
-END:VEVENT
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Cape Verde Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Spain_vs_Cape_Verde@worldcupcalendar.football
+DTSTAMP:20260627T024004Z
+DTSTART:20260615T160000Z
+DTEND:20260615T180000Z
+SUMMARY:🇪🇸 Spain vs 🇨🇻 Cape Verde
+LOCATION:Mercedes-Benz Stadium, Atlanta
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Mercedes-Benz Stadium, Atlanta
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Uruguay_vs_Cape_Verde@worldcupcalendar.football
+DTSTAMP:20260627T024004Z
+DTSTART:20260621T220000Z
+DTEND:20260622T000000Z
+SUMMARY:🇺🇾 Uruguay vs 🇨🇻 Cape Verde
+LOCATION:Hard Rock Stadium, Miami Gardens
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Hard Rock Stadium, Miami Gardens
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Cape_Verde_vs_Saudi_Arabia@worldcupcalendar.football
+DTSTAMP:20260627T024004Z
+DTSTART:20260627T000000Z
+DTEND:20260627T020000Z
+SUMMARY:🇨🇻 Cape Verde vs 🇸🇦 Saudi Arabia
+LOCATION:NRG Stadium, Houston
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: NRG Stadium, Houston
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_3_Winner_Group_J_vs_Runner-up_Group_H@worldcupcalendar.football
+DTSTAMP:20260627T024004Z
+DTSTART:20260703T220000Z
+DTEND:20260704T000000Z
+SUMMARY:⚽ Winner Group J vs 🇨🇻 Cape Verde
+LOCATION:Hard Rock Stadium, Miami Gardens
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Hard Rock Stadium, Miami Gardens
+END:VEVENT
 END:VCALENDAR

@@ -1,36 +1,45 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//FIFA World Cup 2026 Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:FIFA World Cup 2026 - Spain Matches
-X-WR-TIMEZONE:UTC
-X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
-BEGIN:VEVENT
-UID:match_2026_0_Spain_vs_Cape_Verde@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260615T160000Z
-DTEND:20260615T180000Z
-SUMMARY:🇪🇸 Spain vs 🇨🇻 Cape Verde
-LOCATION:Mercedes-Benz Stadium, Atlanta
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Mercedes-Benz Stadium, Atlanta
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_1_Spain_vs_Saudi_Arabia@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260621T160000Z
-DTEND:20260621T180000Z
-SUMMARY:🇪🇸 Spain vs 🇸🇦 Saudi Arabia
-LOCATION:Mercedes-Benz Stadium, Atlanta
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Mercedes-Benz Stadium, Atlanta
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_2_Uruguay_vs_Spain@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260627T000000Z
-DTEND:20260627T020000Z
-SUMMARY:🇺🇾 Uruguay vs 🇪🇸 Spain
-LOCATION:Estadio Akron, Zapopan
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Estadio Akron, Zapopan
-END:VEVENT
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Spain Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Spain_vs_Cape_Verde@worldcupcalendar.football
+DTSTAMP:20260627T024004Z
+DTSTART:20260615T160000Z
+DTEND:20260615T180000Z
+SUMMARY:🇪🇸 Spain vs 🇨🇻 Cape Verde
+LOCATION:Mercedes-Benz Stadium, Atlanta
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Mercedes-Benz Stadium, Atlanta
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Spain_vs_Saudi_Arabia@worldcupcalendar.football
+DTSTAMP:20260627T024004Z
+DTSTART:20260621T160000Z
+DTEND:20260621T180000Z
+SUMMARY:🇪🇸 Spain vs 🇸🇦 Saudi Arabia
+LOCATION:Mercedes-Benz Stadium, Atlanta
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Mercedes-Benz Stadium, Atlanta
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Uruguay_vs_Spain@worldcupcalendar.football
+DTSTAMP:20260627T024004Z
+DTSTART:20260627T000000Z
+DTEND:20260627T020000Z
+SUMMARY:🇺🇾 Uruguay vs 🇪🇸 Spain
+LOCATION:Estadio Akron, Zapopan
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group H\nVenue: Estadio Akron, Zapopan
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_3_Winner_Group_H_vs_Runner-up_Group_J@worldcupcalendar.football
+DTSTAMP:20260627T024004Z
+DTSTART:20260702T190000Z
+DTEND:20260702T210000Z
+SUMMARY:🇪🇸 Spain vs ⚽ Runner-up Group J
+LOCATION:SoFi Stadium, Inglewood
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: SoFi Stadium, Inglewood
+END:VEVENT
 END:VCALENDAR
