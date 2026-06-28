@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_Belgium_vs_Egypt@worldcupcalendar.football
-DTSTAMP:20260627T135231Z
+DTSTAMP:20260628T041727Z
 DTSTART:20260615T190000Z
 DTEND:20260615T210000Z
 SUMMARY:🇧🇪 Belgium vs 🇪🇬 Egypt
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group G\nVenue: Lume
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_New_Zealand_vs_Egypt@worldcupcalendar.football
-DTSTAMP:20260627T135231Z
+DTSTAMP:20260628T041727Z
 DTSTART:20260622T010000Z
 DTEND:20260622T030000Z
 SUMMARY:🇳🇿 New Zealand vs 🇪🇬 Egypt
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group G\nVenue: BC P
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Egypt_vs_Iran@worldcupcalendar.football
-DTSTAMP:20260627T135231Z
+DTSTAMP:20260628T041727Z
 DTSTART:20260627T030000Z
 DTEND:20260627T050000Z
 SUMMARY:🇪🇬 Egypt vs 🇮🇷 Iran
@@ -34,12 +34,12 @@ LOCATION:Lumen Field, Seattle
 DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group G\nVenue: Lumen Field, Seattle
 END:VEVENT
 BEGIN:VEVENT
-UID:match_2026_3_Winner_Group_G_vs_3rd_Group_AEHIJ@worldcupcalendar.football
-DTSTAMP:20260627T135231Z
-DTSTART:20260701T200000Z
-DTEND:20260701T220000Z
-SUMMARY:🇪🇬 Egypt vs ⚽ 3rd Group A/E/H/I/J
-LOCATION:Lumen Field, Seattle
-DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Lumen Field, Seattle
+UID:match_2026_3_Runner-up_Group_D_vs_Runner-up_Group_G@worldcupcalendar.football
+DTSTAMP:20260628T041727Z
+DTSTART:20260703T180000Z
+DTEND:20260703T200000Z
+SUMMARY:🇦🇺 Australia vs 🇪🇬 Egypt
+LOCATION:AT&T Stadium, Arlington
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: AT&T Stadium, Arlington
 END:VEVENT
 END:VCALENDAR

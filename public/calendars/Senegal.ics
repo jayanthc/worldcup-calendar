@@ -1,36 +1,45 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//FIFA World Cup 2026 Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:FIFA World Cup 2026 - Senegal Matches
-X-WR-TIMEZONE:UTC
-X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
-BEGIN:VEVENT
-UID:match_2026_0_France_vs_Senegal@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260616T190000Z
-DTEND:20260616T210000Z
-SUMMARY:🇫🇷 France vs 🇸🇳 Senegal
-LOCATION:MetLife Stadium, East Rutherford
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: MetLife Stadium, East Rutherford
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_1_Norway_vs_Senegal@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260623T000000Z
-DTEND:20260623T020000Z
-SUMMARY:🇳🇴 Norway vs 🇸🇳 Senegal
-LOCATION:MetLife Stadium, East Rutherford
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: MetLife Stadium, East Rutherford
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_2_Senegal_vs_Iraq@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260626T190000Z
-DTEND:20260626T210000Z
-SUMMARY:🇸🇳 Senegal vs 🇮🇶 Iraq
-LOCATION:BMO Field, Toronto
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: BMO Field, Toronto
-END:VEVENT
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - Senegal Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_France_vs_Senegal@worldcupcalendar.football
+DTSTAMP:20260628T041727Z
+DTSTART:20260616T190000Z
+DTEND:20260616T210000Z
+SUMMARY:🇫🇷 France vs 🇸🇳 Senegal
+LOCATION:MetLife Stadium, East Rutherford
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: MetLife Stadium, East Rutherford
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Norway_vs_Senegal@worldcupcalendar.football
+DTSTAMP:20260628T041727Z
+DTSTART:20260623T000000Z
+DTEND:20260623T020000Z
+SUMMARY:🇳🇴 Norway vs 🇸🇳 Senegal
+LOCATION:MetLife Stadium, East Rutherford
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: MetLife Stadium, East Rutherford
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_Senegal_vs_Iraq@worldcupcalendar.football
+DTSTAMP:20260628T041727Z
+DTSTART:20260626T190000Z
+DTEND:20260626T210000Z
+SUMMARY:🇸🇳 Senegal vs 🇮🇶 Iraq
+LOCATION:BMO Field, Toronto
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group I\nVenue: BMO Field, Toronto
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_3_Winner_Group_G_vs_3rd_Group_AEHIJ@worldcupcalendar.football
+DTSTAMP:20260628T041727Z
+DTSTART:20260701T200000Z
+DTEND:20260701T220000Z
+SUMMARY:🇧🇪 Belgium vs 🇸🇳 Senegal
+LOCATION:Lumen Field, Seattle
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Lumen Field, Seattle
+END:VEVENT
 END:VCALENDAR

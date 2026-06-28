@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_Australia_vs_Turkey@worldcupcalendar.football
-DTSTAMP:20260627T135231Z
+DTSTAMP:20260628T041727Z
 DTSTART:20260614T040000Z
 DTEND:20260614T060000Z
 SUMMARY:🇦🇺 Australia vs 🇹🇷 Turkey
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: BC P
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_United_States_vs_Australia@worldcupcalendar.football
-DTSTAMP:20260627T135231Z
+DTSTAMP:20260628T041727Z
 DTSTART:20260619T190000Z
 DTEND:20260619T210000Z
 SUMMARY:🇺🇸 United States vs 🇦🇺 Australia
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: Lume
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Paraguay_vs_Australia@worldcupcalendar.football
-DTSTAMP:20260627T135231Z
+DTSTAMP:20260628T041727Z
 DTSTART:20260626T020000Z
 DTEND:20260626T040000Z
 SUMMARY:🇵🇾 Paraguay vs 🇦🇺 Australia
@@ -35,10 +35,10 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: Levi
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_3_Runner-up_Group_D_vs_Runner-up_Group_G@worldcupcalendar.football
-DTSTAMP:20260627T135231Z
+DTSTAMP:20260628T041727Z
 DTSTART:20260703T180000Z
 DTEND:20260703T200000Z
-SUMMARY:🇦🇺 Australia vs 🇧🇪 Belgium
+SUMMARY:🇦🇺 Australia vs 🇪🇬 Egypt
 LOCATION:AT&T Stadium, Arlington
 DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: AT&T Stadium, Arlington
 END:VEVENT
