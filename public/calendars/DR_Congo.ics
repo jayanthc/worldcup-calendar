@@ -1,36 +1,45 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//FIFA World Cup 2026 Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:FIFA World Cup 2026 - DR Congo Matches
-X-WR-TIMEZONE:UTC
-X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
-BEGIN:VEVENT
-UID:match_2026_0_Portugal_vs_DR_Congo@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260617T170000Z
-DTEND:20260617T190000Z
-SUMMARY:🇵🇹 Portugal vs 🇨🇩 DR Congo
-LOCATION:NRG Stadium, Houston
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: NRG Stadium, Houston
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_1_Colombia_vs_DR_Congo@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260624T020000Z
-DTEND:20260624T040000Z
-SUMMARY:🇨🇴 Colombia vs 🇨🇩 DR Congo
-LOCATION:Estadio Akron, Zapopan
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: Estadio Akron, Zapopan
-END:VEVENT
-BEGIN:VEVENT
-UID:match_2026_2_DR_Congo_vs_Uzbekistan@worldcupcalendar.football
-DTSTAMP:20260601T160909Z
-DTSTART:20260627T233000Z
-DTEND:20260628T013000Z
-SUMMARY:🇨🇩 DR Congo vs 🇺🇿 Uzbekistan
-LOCATION:Mercedes-Benz Stadium, Atlanta
-DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: Mercedes-Benz Stadium, Atlanta
-END:VEVENT
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FIFA World Cup 2026 Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIFA World Cup 2026 - DR Congo Matches
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
+BEGIN:VEVENT
+UID:match_2026_0_Portugal_vs_DR_Congo@worldcupcalendar.football
+DTSTAMP:20260628T042241Z
+DTSTART:20260617T170000Z
+DTEND:20260617T190000Z
+SUMMARY:🇵🇹 Portugal vs 🇨🇩 DR Congo
+LOCATION:NRG Stadium, Houston
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: NRG Stadium, Houston
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_1_Colombia_vs_DR_Congo@worldcupcalendar.football
+DTSTAMP:20260628T042241Z
+DTSTART:20260624T020000Z
+DTEND:20260624T040000Z
+SUMMARY:🇨🇴 Colombia vs 🇨🇩 DR Congo
+LOCATION:Estadio Akron, Zapopan
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: Estadio Akron, Zapopan
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_2_DR_Congo_vs_Uzbekistan@worldcupcalendar.football
+DTSTAMP:20260628T042241Z
+DTSTART:20260627T233000Z
+DTEND:20260628T013000Z
+SUMMARY:🇨🇩 DR Congo vs 🇺🇿 Uzbekistan
+LOCATION:Mercedes-Benz Stadium, Atlanta
+DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group K\nVenue: Mercedes-Benz Stadium, Atlanta
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_3_Winner_Group_L_vs_3rd_Group_EHIJK@worldcupcalendar.football
+DTSTAMP:20260628T042241Z
+DTSTART:20260701T160000Z
+DTEND:20260701T180000Z
+SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs 🇨🇩 DR Congo
+LOCATION:Mercedes-Benz Stadium, Atlanta
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Mercedes-Benz Stadium, Atlanta
+END:VEVENT
 END:VCALENDAR

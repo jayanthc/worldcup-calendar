@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_Ghana_vs_Panama@worldcupcalendar.football
-DTSTAMP:20260627T230457Z
+DTSTAMP:20260628T042241Z
 DTSTART:20260617T230000Z
 DTEND:20260618T010000Z
 SUMMARY:🇬🇭 Ghana vs 🇵🇦 Panama
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: BMO 
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_England_vs_Ghana@worldcupcalendar.football
-DTSTAMP:20260627T230457Z
+DTSTAMP:20260628T042241Z
 DTSTART:20260623T200000Z
 DTEND:20260623T220000Z
 SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs 🇬🇭 Ghana
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: Gill
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Croatia_vs_Ghana@worldcupcalendar.football
-DTSTAMP:20260627T230457Z
+DTSTAMP:20260628T042241Z
 DTSTART:20260627T210000Z
 DTEND:20260627T230000Z
 SUMMARY:🇭🇷 Croatia vs 🇬🇭 Ghana
@@ -35,10 +35,10 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: Linc
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_3_Winner_Group_K_vs_3rd_Group_DEIJL@worldcupcalendar.football
-DTSTAMP:20260627T230457Z
+DTSTAMP:20260628T042241Z
 DTSTART:20260704T013000Z
 DTEND:20260704T033000Z
-SUMMARY:⚽ Winner Group K vs 🇬🇭 Ghana
+SUMMARY:🇨🇴 Colombia vs 🇬🇭 Ghana
 LOCATION:Arrowhead Stadium, Kansas City
 DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Arrowhead Stadium, Kansas City
 END:VEVENT
