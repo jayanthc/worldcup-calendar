@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_United_States_vs_Paraguay@worldcupcalendar.football
-DTSTAMP:20260627T141450Z
+DTSTAMP:20260629T233414Z
 DTSTART:20260613T010000Z
 DTEND:20260613T030000Z
 SUMMARY:🇺🇸 United States vs 🇵🇾 Paraguay
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: SoFi
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_Turkey_vs_Paraguay@worldcupcalendar.football
-DTSTAMP:20260627T141450Z
+DTSTAMP:20260629T233414Z
 DTSTART:20260620T030000Z
 DTEND:20260620T050000Z
 SUMMARY:🇹🇷 Turkey vs 🇵🇾 Paraguay
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: Levi
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Paraguay_vs_Australia@worldcupcalendar.football
-DTSTAMP:20260627T141450Z
+DTSTAMP:20260629T233414Z
 DTSTART:20260626T020000Z
 DTEND:20260626T040000Z
 SUMMARY:🇵🇾 Paraguay vs 🇦🇺 Australia
@@ -35,11 +35,20 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group D\nVenue: Levi
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_3_Winner_Group_E_vs_3rd_Group_ABCDF@worldcupcalendar.football
-DTSTAMP:20260627T141450Z
+DTSTAMP:20260629T233414Z
 DTSTART:20260629T203000Z
 DTEND:20260629T223000Z
 SUMMARY:🇩🇪 Germany vs 🇵🇾 Paraguay
 LOCATION:Gillette Stadium, Foxborough
 DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Gillette Stadium, Foxborough
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_4_Winner_Match_74_vs_Winner_Match_77@worldcupcalendar.football
+DTSTAMP:20260629T233414Z
+DTSTART:20260704T210000Z
+DTEND:20260704T230000Z
+SUMMARY:🇵🇾 Paraguay vs ⚽ Winner Match 77
+LOCATION:Lincoln Financial Field, Philadelphia
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 16\nVenue: Lincoln Financial Field, Philadelphia
 END:VEVENT
 END:VCALENDAR
