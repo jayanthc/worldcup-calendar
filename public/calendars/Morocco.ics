@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_Brazil_vs_Morocco@worldcupcalendar.football
-DTSTAMP:20260626T040551Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260613T220000Z
 DTEND:20260614T000000Z
 SUMMARY:🇧🇷 Brazil vs 🇲🇦 Morocco
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: MetL
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_Scotland_vs_Morocco@worldcupcalendar.football
-DTSTAMP:20260626T040551Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260619T220000Z
 DTEND:20260620T000000Z
 SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland vs 🇲🇦 Morocco
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: Gill
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Morocco_vs_Haiti@worldcupcalendar.football
-DTSTAMP:20260626T040551Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260624T220000Z
 DTEND:20260625T000000Z
 SUMMARY:🇲🇦 Morocco vs 🇭🇹 Haiti
@@ -35,11 +35,20 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group C\nVenue: Merc
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_3_Winner_Group_F_vs_Runner-up_Group_C@worldcupcalendar.football
-DTSTAMP:20260626T040551Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260630T010000Z
 DTEND:20260630T030000Z
 SUMMARY:🇳🇱 Netherlands vs 🇲🇦 Morocco
 LOCATION:Estadio BBVA, Guadalupe
 DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Estadio BBVA, Guadalupe
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_4_Winner_Match_73_vs_Winner_Match_75@worldcupcalendar.football
+DTSTAMP:20260630T040037Z
+DTSTART:20260704T170000Z
+DTEND:20260704T190000Z
+SUMMARY:🇨🇦 Canada vs 🇲🇦 Morocco
+LOCATION:NRG Stadium, Houston
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 16\nVenue: NRG Stadium, Houston
 END:VEVENT
 END:VCALENDAR

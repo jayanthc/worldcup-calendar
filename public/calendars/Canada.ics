@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_Canada_vs_Bosnia_and_Herzegovina@worldcupcalendar.football
-DTSTAMP:20260628T211340Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260612T190000Z
 DTEND:20260612T210000Z
 SUMMARY:🇨🇦 Canada vs 🇧🇦 Bosnia and Herzegovina
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BMO 
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_Canada_vs_Qatar@worldcupcalendar.football
-DTSTAMP:20260628T211340Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260618T220000Z
 DTEND:20260619T000000Z
 SUMMARY:🇨🇦 Canada vs 🇶🇦 Qatar
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BC P
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Switzerland_vs_Canada@worldcupcalendar.football
-DTSTAMP:20260628T211340Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260624T190000Z
 DTEND:20260624T210000Z
 SUMMARY:🇨🇭 Switzerland vs 🇨🇦 Canada
@@ -35,7 +35,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group B\nVenue: BC P
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_3_Runner-up_Group_A_vs_Runner-up_Group_B@worldcupcalendar.football
-DTSTAMP:20260628T211340Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260628T190000Z
 DTEND:20260628T210000Z
 SUMMARY:🇿🇦 South Africa vs 🇨🇦 Canada
@@ -44,10 +44,10 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: SoFi Stadium, Inglew
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_4_Winner_Match_73_vs_Winner_Match_75@worldcupcalendar.football
-DTSTAMP:20260628T211340Z
+DTSTAMP:20260630T040037Z
 DTSTART:20260704T170000Z
 DTEND:20260704T190000Z
-SUMMARY:🇨🇦 Canada vs ⚽ Winner Match 75
+SUMMARY:🇨🇦 Canada vs 🇲🇦 Morocco
 LOCATION:NRG Stadium, Houston
 DESCRIPTION:FIFA World Cup 2026\nStage: Round of 16\nVenue: NRG Stadium, Houston
 END:VEVENT
