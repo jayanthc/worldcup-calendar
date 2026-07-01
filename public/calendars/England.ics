@@ -8,7 +8,7 @@ X-WR-TIMEZONE:UTC
 X-WR-CALDESC:FIFA World Cup 2026 Matches Calendar
 BEGIN:VEVENT
 UID:match_2026_0_England_vs_Croatia@worldcupcalendar.football
-DTSTAMP:20260628T042241Z
+DTSTAMP:20260701T180502Z
 DTSTART:20260617T200000Z
 DTEND:20260617T220000Z
 SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs 🇭🇷 Croatia
@@ -17,7 +17,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: AT&T
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_1_England_vs_Ghana@worldcupcalendar.football
-DTSTAMP:20260628T042241Z
+DTSTAMP:20260701T180502Z
 DTSTART:20260623T200000Z
 DTEND:20260623T220000Z
 SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs 🇬🇭 Ghana
@@ -26,7 +26,7 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: Gill
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_2_Panama_vs_England@worldcupcalendar.football
-DTSTAMP:20260628T042241Z
+DTSTAMP:20260701T180502Z
 DTSTART:20260627T210000Z
 DTEND:20260627T230000Z
 SUMMARY:🇵🇦 Panama vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England
@@ -35,11 +35,20 @@ DESCRIPTION:FIFA World Cup 2026\nStage: Group Stage\nGroup: Group L\nVenue: MetL
 END:VEVENT
 BEGIN:VEVENT
 UID:match_2026_3_Winner_Group_L_vs_3rd_Group_EHIJK@worldcupcalendar.football
-DTSTAMP:20260628T042241Z
+DTSTAMP:20260701T180502Z
 DTSTART:20260701T160000Z
 DTEND:20260701T180000Z
 SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs 🇨🇩 DR Congo
 LOCATION:Mercedes-Benz Stadium, Atlanta
 DESCRIPTION:FIFA World Cup 2026\nStage: Round of 32\nVenue: Mercedes-Benz Stadium, Atlanta
+END:VEVENT
+BEGIN:VEVENT
+UID:match_2026_4_Winner_Match_79_vs_Winner_Match_80@worldcupcalendar.football
+DTSTAMP:20260701T180502Z
+DTSTART:20260706T000000Z
+DTEND:20260706T020000Z
+SUMMARY:🇲🇽 Mexico vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England
+LOCATION:Estadio Azteca, Mexico City
+DESCRIPTION:FIFA World Cup 2026\nStage: Round of 16\nVenue: Estadio Azteca, Mexico City
 END:VEVENT
 END:VCALENDAR
